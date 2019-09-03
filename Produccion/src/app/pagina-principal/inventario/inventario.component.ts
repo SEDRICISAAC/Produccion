@@ -18,17 +18,18 @@ export class InventarioComponent implements OnInit {
     this.table_header = [
       {
         id: 'N°',
-        tela: 'Tela',
-        boton: 'Boton',
-        hilo: 'Hilo',
-        etiqueta: 'Etiqueta',
-        empleado: 'Empleado'
+        nombre: 'Nombre',
+        textura: 'Textura',
+        idcolortelas: 'Color tela',
+        iddisenotela: 'Diseño Tela',
+        idmaterialtela: 'Material Tela',
+        idproveedor: 'Proveedor'
       }
     ]
   }
 
   getData = () => {
-    let tabla = 'inventarios'
+    let tabla = 'telas'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos

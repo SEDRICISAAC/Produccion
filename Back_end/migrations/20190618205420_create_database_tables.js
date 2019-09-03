@@ -113,7 +113,7 @@ exports.up = function(knex, Promise) {
     table.string('direccion');
     table.string('telefono');
     table.integer('iddepartamentos').references('id').inTable('departamentos');
-    table.integer('idcargos').references('id').inTable('cargos');
+    table.integer('idcargo').references('id').inTable('cargos');
     table.integer('idestado').references('id').inTable('estados');
   })
   .createTable( 'inventarios', function( table ) {

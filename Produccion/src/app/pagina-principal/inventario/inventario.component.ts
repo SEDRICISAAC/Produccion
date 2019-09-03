@@ -28,7 +28,7 @@ export class InventarioComponent implements OnInit {
   }
 
   getData = () => {
-    let tabla = 'productos'
+    let tabla = 'inventarios'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
         .subscribe(data => {
             this.respuesta = data.datos

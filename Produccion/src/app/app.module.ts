@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { HeaderPrincipalComponent } from './pagina-principal/header-principal/header-principal.component';
+import { InventarioComponent } from './pagina-principal/inventario/inventario.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HeaderPrincipalComponent } from './pagina-principal/header-principal/he
     LoginComponent,
     InicioComponent,
     PaginaPrincipalComponent,
-    HeaderPrincipalComponent
+    HeaderPrincipalComponent,
+    InventarioComponent
   ],
   imports: [
     BrowserModule,

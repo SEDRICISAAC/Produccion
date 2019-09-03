@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { HeaderPrincipalComponent } from './pagina-principal/header-principal/header-principal.component';
+import { InventarioComponent } from './pagina-principal/inventario/inventario.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,8 @@ const routes: Routes = [
    { path: 'inicio', component: InicioComponent },
    { path: 'principal', component: PaginaPrincipalComponent },
    { path: 'headerprincipal', component: HeaderPrincipalComponent},
+   { path: 'inventario', component: InventarioComponent },
+
 
 
 

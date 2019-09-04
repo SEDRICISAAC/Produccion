@@ -1,19 +1,10 @@
 <body>
     <div>
-        <select id="" values="Buscar por">
-            <option value="telas">
-                <a href="">telas</a>
-            </option>
-            <option value="hilos">
-                    <a href="">botones</a>
-            </option>
-            <option value="">
-                    <a href="">reatas</a>
-            </option>
-            <option value="">
-                    <a href="">hilos</a>
-            </option>
+        <strong>Selecciona el articulo que deseas ver</strong><br>
+        <select>
+            <option *ngFor="let item of respuestaProductos" value={{item.id}}>{{item.nombre}}</option>
         </select>
+     
     </div>
 
     <div>
@@ -28,10 +19,10 @@
         <table class="table table-1">
             <thead *ngFor="let item of table_header">
                 <th>{{item.id}}</th>
-                <th>{{item.nombre}}</th>
+                <th>{{item.nombretela}}</th>
                 <th>{{item.textura}}</th>
-                <th>{{item.idcolortelas}}</th>
-                <th>{{item.iddisenotela}}</th>
+                <th>{{item.colortela}}</th>
+                <th>{{item.diseno}}</th>
                 <th>{{item.idmaterialtela}}</th>
                 <th>{{item.idproveedor}}</th>
             </thead>
@@ -39,10 +30,10 @@
             <tbody>
                 <tr *ngFor="let item of respuesta">
                <th>{{item.id}}</th>
-                <th>{{item.nombre}}</th>
+                <th>{{item.nombretela}}</th>
                 <th>{{item.textura}}</th>
-                <th>{{item.idcolortela}}</th>
-                <th>{{item.iddisenotela}}</th>
+                <th>{{item.colortela}}</th>
+                <th>{{item.diseno}}</th>
                 <th>{{item.idmaterialtela}}</th>
                 <th>{{item.idproveedor}}</th>
                 </tr>

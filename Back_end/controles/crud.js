@@ -153,7 +153,49 @@ let getPDFordenes = (req, res) => {
     })
 }
 
+
+// telas
+let getDatostelas = (req, res) => {
+    // let telasid = req.query.telasid
+    db.raw(`select  telas.id , telas.nombre as NombreTela, diseñotelas.diseño as diseno, colortelas.nombre as ColorTela
+    from telas 
+    join diseñotelas 
+    on telas.iddiseñotela=diseñotelas.id
+    join colortelas
+    on telas.idcolortelas=colortelas.id
+    
+    
+    `)
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
+// select id as telasid , telas.telasid , telas.nombre as NombreTela, materialtelas.material, diseñotelas.diseño, proveedores.nombre as NombreProveedor, colortelas.nombre as ColorTela
+//     from telas 
+//     join diseñotelas 
+//     on telas.iddiseñotela=diseñotelas.id
+//     join colortelas
+//     on telas.idcolortelas=colortelas.id
+//     join materialtelas
+//     on telas.idmaterialtela=materialtelas.id
+//     join proveedores
+//     on telas.idproveedor=proveedores.id
+//     where telas.id= ${telasid}
+
+
 module.exports = {
+    getDatostelas,
     getDatos,
     postDatos,
     updateDatos,

@@ -10,7 +10,7 @@ api.post('/route', control.postDatos)
 api.put('/route', control.updateDatos )
 api.delete('/route', control.deleteDatos)
 
-// api.get('/routetelas',control1.getDatostela)
+api.get('/routetelasAPI',control.getDatostelas)
 api.get('/routeF_ordenesdetalle', control.getDatosOrdenes_detalles)
 api.get('/routeF_ordenes', control.getDatosOrdenes)
 api.get('/routebyid', control.getDatosbyID)

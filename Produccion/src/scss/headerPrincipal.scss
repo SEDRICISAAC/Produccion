@@ -2,14 +2,6 @@
    padding: 0;
    margin: 0;
  }
- p {
-   margin-bottom: 20px;
- }
- .wrapper {
-   width: 80%;
-   margin: auto;
-   overflow:hidden;
- }
  header {
    top: 0%;
    left: 0%;
@@ -18,31 +10,26 @@
    height: 11;
    position: fixed;
    z-index: 10;
- }
- 
- nav {
-   float: left; /* Desplazamos el nav hacia la izquierda */
- }
- nav ul {
-   list-style: none;
-   overflow: hidden; /* Limpiamos errores de float */
- }
- nav ul li {
-   float: left;
-   font-family: Arial, sans-serif;
-   font-size: 16px;
- }
- nav ul li a {
-   display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
-   padding: 20px;
-   color: #fff;
-   text-decoration: none;
-   text-align: center;
- }
- nav ul li:hover {
-   background: #5E4C4C;
- }
- .contenido {
-   padding-top: 80px;
- }
- 
+ } 
+ .menuCSS3 ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.menuCSS3 a {
+  display: block;
+  padding: 1.3em;
+  background-color: none;
+  text-decoration: none;
+  color: #fff;
+}
+.menuCSS3 a:hover {
+  background-color: #CC673B;
+}
+.menuCSS3 ul li ul {
+  display: none;
+}
+.menuCSS3 ul li a:hover + ul, .menuCSS3 ul li ul:hover {
+  display: block;
+}

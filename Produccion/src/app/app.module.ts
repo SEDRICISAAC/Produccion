@@ -9,6 +9,12 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { HeaderPrincipalComponent } from './pagina-principal/header-principal/header-principal.component';
 import { InventarioComponent } from './pagina-principal/inventario/inventario.component';
+import { InventariotelasComponent } from './pagina-principal/inventario/inventariotelas/inventariotelas.component';
+import { HeaderInventarioComponent } from './pagina-principal/inventario/header-inventario/header-inventario.component';
+import { InventariobotonesComponent } from './pagina-principal/inventario/inventariobotones/inventariobotones.component';
+import { InventariohilosComponent } from './pagina-principal/inventario/inventariohilos/inventariohilos.component';
+import { InventarioetiquetasComponent } from './pagina-principal/inventario/inventarioetiquetas/inventarioetiquetas.component';
+import { InventarioreatasComponent } from './pagina-principal/inventario/inventarioreatas/inventarioreatas.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { InventarioComponent } from './pagina-principal/inventario/inventario.co
     InicioComponent,
     PaginaPrincipalComponent,
     HeaderPrincipalComponent,
-    InventarioComponent
+    InventarioComponent,
+    HeaderInventarioComponent,
+    InventariotelasComponent,
+    InventariobotonesComponent,
+    InventariohilosComponent,
+    InventarioetiquetasComponent,
+    InventarioreatasComponent
   ],
   imports: [
     BrowserModule,

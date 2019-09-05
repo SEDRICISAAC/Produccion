@@ -8,13 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { HeaderPrincipalComponent } from './pagina-principal/header-principal/header-principal.component';
-import { InventarioComponent } from './pagina-principal/inventario/inventario.component';
-import { InventariotelasComponent } from './pagina-principal/inventario/inventariotelas/inventariotelas.component';
-import { HeaderInventarioComponent } from './pagina-principal/inventario/header-inventario/header-inventario.component';
-import { InventariobotonesComponent } from './pagina-principal/inventario/inventariobotones/inventariobotones.component';
-import { InventariohilosComponent } from './pagina-principal/inventario/inventariohilos/inventariohilos.component';
-import { InventarioetiquetasComponent } from './pagina-principal/inventario/inventarioetiquetas/inventarioetiquetas.component';
-import { InventarioreatasComponent } from './pagina-principal/inventario/inventarioreatas/inventarioreatas.component';
+import { InventarioreatasComponent } from './pagina-principal/Inventarios/inventarioreatas/inventarioreatas.component';
+import { InventarioetiquetasComponent } from './pagina-principal/Inventarios/inventarioetiquetas/inventarioetiquetas.component';
+import { InventariohilosComponent } from './pagina-principal/Inventarios/inventariohilos/inventariohilos.component';
+import { InventariobotonesComponent } from './pagina-principal/Inventarios/inventariobotones/inventariobotones.component';
+import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
+import { HeaderInventarioComponent } from './pagina-principal/Inventarios/header-inventario/header-inventario.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { InventarioreatasComponent } from './pagina-principal/inventario/inventa
     InicioComponent,
     PaginaPrincipalComponent,
     HeaderPrincipalComponent,
-    InventarioComponent,
     HeaderInventarioComponent,
     InventariotelasComponent,
     InventariobotonesComponent,

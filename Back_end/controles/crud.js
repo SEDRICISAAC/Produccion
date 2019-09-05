@@ -157,13 +157,16 @@ let getPDFordenes = (req, res) => {
 // telas
 let getDatostelas = (req, res) => {
     // let telasid = req.query.telasid
-    db.raw(`select  telas.id , telas.nombre as NombreTela, diseñotelas.diseño as diseno, colortelas.nombre as ColorTela
+    db.raw(`select  telas.id ,telas.textura, telas.nombre as NombreTela, diseñotelas.diseño as diseno, colortelas.nombre as ColorTela,materialtelas.material,proveedores.nombre as proveedor
     from diseñotelas 
     join telas 
     on telas.iddiseñotela=diseñotelas.id
     join colortelas
     on telas.idcolortelas=colortelas.id
-    
+    join materialtelas
+	on telas.idmaterialtela=materialtelas.id 
+    join proveedores
+    on telas.idproveedor=proveedores.id
     
     `)
     .then( resultado => {

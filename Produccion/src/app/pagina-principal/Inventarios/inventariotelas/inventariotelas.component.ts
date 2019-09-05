@@ -26,8 +26,8 @@ export class InventariotelasComponent implements OnInit {
         textura: 'Textura',
         colortela: 'Color tela',
         diseno: 'Diseño Tela',
-        idmaterialtela: 'Material Tela',
-        idproveedor: 'Proveedor'
+        material: 'Material Tela',
+        proveedor: 'Proveedor'
       }
     ]
   }

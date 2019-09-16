@@ -12,6 +12,7 @@ import { InventarioreatasComponent } from './pagina-principal/Inventarios/invent
 import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
 // modulo de diseño
 import { ModulodeDisenoComponent } from './modulo-de-diseño/modulode-diseno/modulode-diseno.component';
+import { FichaDeDisenoComponent } from './modulo-de-diseño/modulode-diseno/ficha-de-diseno/ficha-de-diseno.component';
 
 
 
@@ -29,8 +30,9 @@ const routes: Routes = [
    { path: 'Telas', component: InventariotelasComponent },
 // modulo de diseño
    { path: 'Diseño', component: ModulodeDisenoComponent },
+   { path: 'Ficha De Diseño', component: FichaDeDisenoComponent },
 
-
+   
 
 
 

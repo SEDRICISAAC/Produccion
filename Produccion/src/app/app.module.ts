@@ -14,7 +14,9 @@ import { InventariohilosComponent } from './pagina-principal/Inventarios/inventa
 import { InventariobotonesComponent } from './pagina-principal/Inventarios/inventariobotones/inventariobotones.component';
 import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
 import { HeaderInventarioComponent } from './pagina-principal/Inventarios/header-inventario/header-inventario.component';
-import { FichadisenoComponent } from './diseño/fichadiseno/fichadiseno.component';
+import { ModulodeDisenoComponent } from './modulo-de-diseño/modulode-diseno/modulode-diseno.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { FichadisenoComponent } from './diseño/fichadiseno/fichadiseno.componen
     InventariohilosComponent,
     InventarioetiquetasComponent,
     InventarioreatasComponent,
-    FichadisenoComponent
+    ModulodeDisenoComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,8 +14,7 @@ import { InventariohilosComponent } from './pagina-principal/Inventarios/inventa
 import { InventariobotonesComponent } from './pagina-principal/Inventarios/inventariobotones/inventariobotones.component';
 import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
 import { HeaderInventarioComponent } from './pagina-principal/Inventarios/header-inventario/header-inventario.component';
-import { ModulodeDisenoComponent } from './modulo-de-diseño/modulode-diseno/modulode-diseno.component';
-import { FichaDeDisenoComponent } from './modulo-de-diseño/modulode-diseno/ficha-de-diseno/ficha-de-diseno.component';
+// Modulo De Diseño
 
 
 
@@ -32,8 +31,7 @@ import { FichaDeDisenoComponent } from './modulo-de-diseño/modulode-diseno/fich
     InventariohilosComponent,
     InventarioetiquetasComponent,
     InventarioreatasComponent,
-    ModulodeDisenoComponent,
-    FichaDeDisenoComponent,
+    //Modulo De Diseño
   ],
   imports: [
     BrowserModule,

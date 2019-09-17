@@ -14,8 +14,10 @@ import { InventariohilosComponent } from './pagina-principal/Inventarios/inventa
 import { InventariobotonesComponent } from './pagina-principal/Inventarios/inventariobotones/inventariobotones.component';
 import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
 import { HeaderInventarioComponent } from './pagina-principal/Inventarios/header-inventario/header-inventario.component';
-import { SidebarComponent } from './diseño/componentes/sidebar/sidebar.component';
 // Modulo De Diseño
+import { DashboardComponent } from './diseño/paginas/dashboard/dashboard.component';
+import { SidebarComponent } from './diseño/componentes/sidebar/sidebar.component';
+import { NavbarComponent } from './diseño/componentes/navbar/navbar.component';
 
 
 
@@ -32,8 +34,10 @@ import { SidebarComponent } from './diseño/componentes/sidebar/sidebar.componen
     InventariohilosComponent,
     InventarioetiquetasComponent,
     InventarioreatasComponent,
-    SidebarComponent,
     //Modulo De Diseño
+    SidebarComponent,
+    DashboardComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

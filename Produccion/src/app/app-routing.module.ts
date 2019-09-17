@@ -11,6 +11,7 @@ import { InventariohilosComponent } from './pagina-principal/Inventarios/inventa
 import { InventarioreatasComponent } from './pagina-principal/Inventarios/inventarioreatas/inventarioreatas.component';
 import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
 // modulo de diseño
+import { DashboardComponent } from './diseño/paginas/dashboard/dashboard.component';
 
 
 
@@ -26,7 +27,8 @@ const routes: Routes = [
    { path: 'Hilos', component: InventariohilosComponent },
    { path: 'Reatas', component: InventarioreatasComponent },
    { path: 'Telas', component: InventariotelasComponent },
-// modulo de diseño
+// modulo de diseño paginas
+   { path: 'Dash', component:DashboardComponent },
    
 
 

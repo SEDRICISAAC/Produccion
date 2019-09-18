@@ -18,6 +18,7 @@ import { HeaderInventarioComponent } from './pagina-principal/Inventarios/header
 import { DashboardComponent } from './diseño/paginas/dashboard/dashboard.component';
 import { SidebarComponent } from './diseño/componentes/sidebar/sidebar.component';
 import { NavbarComponent } from './diseño/componentes/navbar/navbar.component';
+import { ChartComponent } from './diseño/componentes/chart/chart.component';
 
 
 
@@ -38,6 +39,7 @@ import { NavbarComponent } from './diseño/componentes/navbar/navbar.component';
     SidebarComponent,
     DashboardComponent,
     NavbarComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,

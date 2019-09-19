@@ -1,1 +1,71 @@
-@import "../../../../scss/navbarDiseno";
+// @import "../../../../scss/navbarDiseno";
+
+body
+{
+	position: fixed;
+	margin: 0;
+    padding: 0;
+	top: 0;
+	right: 0;
+	width: 100%;
+	// background-color: $silver-glass;
+}
+
+header
+{
+	overflow: hidden;
+	background: rgb(28, 38, 68);
+	color: rgb(31, 26, 19);
+}
+
+.wrapper
+{
+	width: 90%;
+	margin: auto;
+}
+
+header .logo
+{
+	img{
+        position: relative;
+   
+    background-size: cover;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+    }
+}
+
+header nav
+{
+    float: right;
+    margin: auto;
+}
+
+header nav a
+{
+	display: inline-block;
+	color: rgb(184, 183, 183);
+	text-decoration: none;
+	padding: 19px 20px;
+	line-height: normal;
+	font-size: 20px;
+	font-weight: bold;
+	-webkit-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+header nav a:hover
+{
+	background: #f56f3a;
+	border-radius: 50px;
+}
+
+input
+{
+	// background: url("../../assets/cromatico.png")
+}

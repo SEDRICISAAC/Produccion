@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.7.2" last-position="188,0" last-zoom="1">
+<database name="Inventario">
+</database>
+
+<schema name="public" protected="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="InventarioGeneral">
+	<schema name="public"/>
+	<position x="925" y="237"/>
+	<column name="id_InventarioGeneral">
+		<type name="integer"/>
+	</column>
+	<column name="id_InventarioTelas">
+		<type name="integer"/>
+	</column>
+	<column name="id_InventarioHilos">
+		<type name="integer"/>
+	</column>
+	<column name="id_InventarioReatas">
+		<type name="integer"/>
+	</column>
+	<column name="id_InventarioBotones">
+		<type name="integer"/>
+	</column>
+	<column name="id_InventarioEtiquetas">
+		<type name="integer"/>
+	</column>
+	<constraint name="id_InventarioGeneral" type="pk-constr" factor="100" table="public.&quot;InventarioGeneral&quot;">
+		<columns names="id_InventarioGeneral" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="InventarioTelas">
+	<schema name="public"/>
+	<position x="472" y="544"/>
+	<column name="id_InventarioTelas">
+		<type name="integer"/>
+	</column>
+	<column name="id_Tela">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="cantidad">
+		<type name="numeric" length="8"/>
+	</column>
+	<constraint name="id_InventarioTelas" type="pk-constr" factor="100" table="public.&quot;InventarioTelas&quot;">
+		<columns names="id_InventarioTelas" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="InventarioBotones">
+	<schema name="public"/>
+	<position x="1433" y="535"/>
+	<column name="id_InventarioBotones">
+		<type name="integer"/>
+	</column>
+	<column name="id_Boton">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="cantidad">
+		<type name="numeric" length="8"/>
+	</column>
+	<constraint name="id_InventarioBotones" type="pk-constr" factor="100" table="public.&quot;InventarioBotones&quot;">
+		<columns names="id_InventarioBotones" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="InventarioHilos">
+	<schema name="public"/>
+	<position x="927" y="540"/>
+	<column name="id_InventarioHilos">
+		<type name="integer"/>
+	</column>
+	<column name="id_Hilo">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="cantidad">
+		<type name="numeric" length="8"/>
+	</column>
+	<constraint name="id_InventarioHilos" type="pk-constr" factor="100" table="public.&quot;InventarioHilos&quot;">
+		<columns names="id_InventarioHilos" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="InventarioReatas">
+	<schema name="public"/>
+	<position x="1436" y="256"/>
+	<column name="id_InventarioReatas">
+		<type name="integer"/>
+	</column>
+	<column name="id_Reata">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="cantidad">
+		<type name="numeric" length="8"/>
+	</column>
+	<constraint name="id_InventarioReatas" type="pk-constr" factor="100" table="public.&quot;InventarioReatas&quot;">
+		<columns names="id_InventarioReatas" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="InventarioEtiquetas">
+	<schema name="public"/>
+	<position x="454" y="261"/>
+	<column name="id_InventarioEtiquetas">
+		<type name="integer"/>
+	</column>
+	<column name="id_Etiqueta">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="cantidad">
+		<type name="numeric" length="8"/>
+	</column>
+	<constraint name="id_InventarioEtiquetas" type="pk-constr" factor="100" table="public.&quot;InventarioEtiquetas&quot;">
+		<columns names="id_InventarioEtiquetas" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Telas">
+	<schema name="public"/>
+	<position x="506" y="761"/>
+	<column name="id_Tela">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="25"/>
+	</column>
+	<constraint name="id_Tela" type="pk-constr" factor="100" table="public.&quot;Telas&quot;">
+		<columns names="id_Tela" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Botones">
+	<schema name="public"/>
+	<position x="1466" y="755"/>
+	<column name="id_Boton">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="25"/>
+	</column>
+	<constraint name="id_Boton" type="pk-constr" factor="100" table="public.&quot;Botones&quot;">
+		<columns names="id_Boton" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Hilos">
+	<schema name="public"/>
+	<position x="954" y="738"/>
+	<column name="id_Hilo">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="25"/>
+	</column>
+	<constraint name="id_Hilo" type="pk-constr" factor="100" table="public.&quot;Hilos&quot;">
+		<columns names="id_Hilo" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Reatas">
+	<schema name="public"/>
+	<position x="1470" y="49"/>
+	<column name="id_Reata">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="25"/>
+	</column>
+	<constraint name="id_Reata" type="pk-constr" factor="100" table="public.&quot;Reatas&quot;">
+		<columns names="id_Reata" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Etiquetas">
+	<schema name="public"/>
+	<position x="488" y="48"/>
+	<column name="id_Etiqueta">
+		<type name="numeric" length="8"/>
+	</column>
+	<column name="nombre">
+		<type name="varchar" length="25"/>
+	</column>
+	<constraint name="id_Etiqueta" type="pk-constr" factor="100" table="public.&quot;Etiquetas&quot;">
+		<columns names="id_Etiqueta" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_InventarioTelas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;InventarioTelas&quot;" table="public.&quot;InventarioGeneral&quot;">
+	<columns names="id_InventarioTelas" ref-type="src-columns"/>
+	<columns names="id_InventarioTelas" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_InventarioHilos" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;InventarioHilos&quot;" table="public.&quot;InventarioGeneral&quot;">
+	<columns names="id_InventarioHilos" ref-type="src-columns"/>
+	<columns names="id_InventarioHilos" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_InventarioReatas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;InventarioReatas&quot;" table="public.&quot;InventarioGeneral&quot;">
+	<columns names="id_InventarioReatas" ref-type="src-columns"/>
+	<columns names="id_InventarioReatas" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_InventarioBotones" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;InventarioBotones&quot;" table="public.&quot;InventarioGeneral&quot;">
+	<columns names="id_InventarioBotones" ref-type="src-columns"/>
+	<columns names="id_InventarioBotones" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_InventarioEtiquetas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;InventarioEtiquetas&quot;" table="public.&quot;InventarioGeneral&quot;">
+	<columns names="id_InventarioEtiquetas" ref-type="src-columns"/>
+	<columns names="id_InventarioEtiquetas" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_Telas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;Telas&quot;" table="public.&quot;InventarioTelas&quot;">
+	<columns names="id_Tela" ref-type="src-columns"/>
+	<columns names="id_Tela" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_Botones" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;Botones&quot;" table="public.&quot;InventarioBotones&quot;">
+	<columns names="id_Boton" ref-type="src-columns"/>
+	<columns names="id_Boton" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_Hilos" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;Hilos&quot;" table="public.&quot;InventarioHilos&quot;">
+	<columns names="id_Hilo" ref-type="src-columns"/>
+	<columns names="id_Hilo" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_Reatas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;Reatas&quot;" table="public.&quot;InventarioReatas&quot;">
+	<columns names="id_Reata" ref-type="src-columns"/>
+	<columns names="id_Reata" ref-type="dst-columns"/>
+</constraint>
+<constraint name="fk_Etiquetas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="NO ACTION" ref-table="public.&quot;Etiquetas&quot;" table="public.&quot;InventarioEtiquetas&quot;">
+	<columns names="id_Etiqueta" ref-type="src-columns"/>
+	<columns names="id_Etiqueta" ref-type="dst-columns"/>
+</constraint>
+<relationship name="&quot;rel_InventarioGeneral_InventarioTelas&quot;" type="relfk"
+	 src-table="public.&quot;InventarioGeneral&quot;"
+	 dst-table="public.&quot;InventarioTelas&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="&quot;rel_InventarioGeneral_InventarioHilos&quot;" type="relfk"
+	 src-table="public.&quot;InventarioGeneral&quot;"
+	 dst-table="public.&quot;InventarioHilos&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="rel_InventarioGeneral_InventarioReatas" type="relfk"
+	 src-table="public.&quot;InventarioGeneral&quot;"
+	 dst-table="public.&quot;InventarioReatas&quot;"
+	 src-required="true" dst-required="true">
+	<label ref-type="src-label">
+		<position x="2.47955e-05" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="&quot;rel_InventarioGeneral_InventarioBotones&quot;" type="relfk"
+	 src-table="public.&quot;InventarioGeneral&quot;"
+	 dst-table="public.&quot;InventarioBotones&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="rel_InventarioGeneral_InventarioEtiquetas" type="relfk"
+	 src-table="public.&quot;InventarioGeneral&quot;"
+	 dst-table="public.&quot;InventarioEtiquetas&quot;"
+	 src-required="true" dst-required="true">
+	<label ref-type="src-label">
+		<position x="-7.19998" y="-5.67377"/>
+	</label>
+	<label ref-type="dst-label">
+		<position x="3.00002" y="-4.38196"/>
+	</label>
+</relationship>
+
+<relationship name="&quot;rel_InventarioTelas_Telas&quot;" type="relfk"
+	 src-table="public.&quot;InventarioTelas&quot;"
+	 dst-table="public.&quot;Telas&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="&quot;rel_InventarioHilos_Hilos&quot;" type="relfk"
+	 src-table="public.&quot;InventarioHilos&quot;"
+	 dst-table="public.&quot;Hilos&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="&quot;rel_InventarioBotones_Botones&quot;" type="relfk"
+	 src-table="public.&quot;InventarioBotones&quot;"
+	 dst-table="public.&quot;Botones&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="&quot;rel_InventarioReatas_Reatas&quot;" type="relfk"
+	 src-table="public.&quot;InventarioReatas&quot;"
+	 dst-table="public.&quot;Reatas&quot;"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="rel_InventarioEtiquetas_Etiquetas" type="relfk"
+	 src-table="public.&quot;InventarioEtiquetas&quot;"
+	 dst-table="public.&quot;Etiquetas&quot;"
+	 src-required="true" dst-required="true">
+	<label ref-type="src-label">
+		<position x="7.08527" y="-1.20001"/>
+	</label>
+	<label ref-type="dst-label">
+		<position x="4.64673" y="4.6"/>
+	</label>
+</relationship>
+
+</dbmodel>

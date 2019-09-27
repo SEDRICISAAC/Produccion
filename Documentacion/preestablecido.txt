@@ -1,0 +1,22 @@
+1.-Creacion de diagrama entidad relacion con tablas y campos establacidos en una reunion previa tiempo depende de la reunion 1 a 2 dias, tiempo estimado de la aplicacion medio dia:
+	
+	-orden de diseño
+	-ficha de insumos
+	-ficha tecnica
+	-pedido
+	-orden de produccion 
+	-orden de trazo
+	-orden de corte
+	
+ a esto se le agrega la tabla detalle de insumos para la ficha tecnica la cual va a contener a esta tabla ---pendiente por analizar
+
+2.-Diagramar la base de datos con las tablas establecidas en su totalidad tiempo 1 dia todo depende de el analisis previo.
+
+se diagrama la base de datos en base al diagrama entidad relacion 
+
+3.-Implementar la base de datos con toda la informacion y campos preestablecidos 
+
+5.-Tratar, analizar y diseñar la logica (backend) del sistema esto puede tomarme de 2 a 4 dias
+
+4.-Reestructurar html y diseñar frontend esto tendra un tiempo de 2 a 3 dias 
+ 

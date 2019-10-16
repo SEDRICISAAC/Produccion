@@ -116,7 +116,7 @@ data: {
 }, 
 options: {
  title:{
-     text:"Bar Chart",
+     text:"Pie Chart",
      display:true
  },
  scales: {

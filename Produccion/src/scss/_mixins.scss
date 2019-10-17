@@ -233,7 +233,7 @@
     {
         position: absolute;
         top: 15%;
-        left: 10%;
+        left: 20%;
     }
     select{
         background: $light_blue;
@@ -312,7 +312,7 @@
 @mixin w3modal {
     .w3-modal{
         .w3-modal-content{
-            background-image: url("../../../assets/fontLogin.jpg");
+            // background-image: url("../../../assets/fontLogin.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -372,7 +372,7 @@
     background-color:rgba(0, 0, 0, 0.75);
     .w3-modal-content
     {
-      background-image: url("../../../assets/fontLogin.jpg");
+    //   background-image: url("../../../assets/fontLogin.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;

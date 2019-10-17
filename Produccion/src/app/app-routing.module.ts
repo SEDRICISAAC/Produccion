@@ -12,6 +12,7 @@ import { InventarioreatasComponent } from './pagina-principal/Inventarios/invent
 import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
 // modulo de diseño
 import { DashboardComponent } from './diseño/paginas/dashboard/dashboard.component';
+import { OrdenDeDisenoComponent } from './diseño/paginas/orden-de-diseno/orden-de-diseno.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
    { path: 'Telas', component: InventariotelasComponent },
 // modulo de diseño paginas
    { path: 'Dash', component:DashboardComponent },
+   { path: 'Orden De Diseño', component: OrdenDeDisenoComponent },
    
 
 

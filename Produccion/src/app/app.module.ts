@@ -19,6 +19,8 @@ import { DashboardComponent } from './diseño/paginas/dashboard/dashboard.compon
 import { SidebarComponent } from './diseño/componentes/sidebar/sidebar.component';
 import { NavbarComponent } from './diseño/componentes/navbar/navbar.component';
 import { ChartComponent } from './diseño/componentes/chart/chart.component';
+import { OrdenDeDisenoComponent } from './diseño/paginas/orden-de-diseno/orden-de-diseno.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -40,11 +42,14 @@ import { ChartComponent } from './diseño/componentes/chart/chart.component';
     DashboardComponent,
     NavbarComponent,
     ChartComponent,
+    OrdenDeDisenoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

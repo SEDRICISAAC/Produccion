@@ -135,7 +135,23 @@
 	<ul>
     <li tabindex="0" class="icon-dashboard" routerLink="/Dash"><span >Estadisticas</span></li>
     <li tabindex="0" class="icon-customers" routerLink="/Orden De Diseño"><span>Orden de Diseño</span></li>
-    <li tabindex="0" class="icon-customers"><span>Insumos</span></li>
-    <li tabindex="0" class="icon-settings"><span>Settings</span></li>
+    
+    <!-- <li tabindex="0" class="icon-settings"><span>Settings</span></li> -->
+    <li tabindex="0" class="icon-customers" >
+    <div class="sub">
+        <label for="touch"><span>Insumos</span></label>               
+        <input type="checkbox" id="touch"> 
+      
+        <ul class="slide">
+          <li><a href="/telas">Tela</a></li> 
+          <li><a href="/reatas">Reata</a></li>
+          <li><a href="/hilos">Hilo</a></li>
+          <li><a href="/botones">Boton</a></li>
+          <li><a href="/etiquetas">Etiqueta</a></li>
+        </ul>
+    </div>
+      
+
+    </li>
   </ul>
 </nav>

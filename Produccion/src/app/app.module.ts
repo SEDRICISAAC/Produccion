@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+//Pagina Principal
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
@@ -14,13 +15,20 @@ import { InventariohilosComponent } from './pagina-principal/Inventarios/inventa
 import { InventariobotonesComponent } from './pagina-principal/Inventarios/inventariobotones/inventariobotones.component';
 import { InventariotelasComponent } from './pagina-principal/Inventarios/inventariotelas/inventariotelas.component';
 import { HeaderInventarioComponent } from './pagina-principal/Inventarios/header-inventario/header-inventario.component';
-// Modulo De Diseño
-import { DashboardComponent } from './diseño/paginas/dashboard/dashboard.component';
+// Modulo De Diseño Componentes
 import { SidebarComponent } from './diseño/componentes/sidebar/sidebar.component';
 import { NavbarComponent } from './diseño/componentes/navbar/navbar.component';
 import { ChartComponent } from './diseño/componentes/chart/chart.component';
+//Modulo De Diseño 
 import { OrdenDeDisenoComponent } from './diseño/paginas/orden-de-diseno/orden-de-diseno.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './diseño/paginas/dashboard/dashboard.component';
+
+//Modulo De Diseño Insumos
+import { TelasComponent } from './diseño/paginas/insumos/telas/telas.component';
+import { HilosComponent } from './diseño/paginas/insumos/hilos/hilos.component';
+import { BotonesComponent } from './diseño/paginas/insumos/botones/botones.component';
+import { ReatasComponent } from './diseño/paginas/insumos/reatas/reatas.component';
+import { EtiquetasComponent } from './diseño/paginas/insumos/etiquetas/etiquetas.component';
 
 
 
@@ -43,6 +51,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     ChartComponent,
     OrdenDeDisenoComponent,
+    TelasComponent,
+    HilosComponent,
+    BotonesComponent,
+    ReatasComponent,
+    EtiquetasComponent,
   ],
   imports: [
     BrowserModule,

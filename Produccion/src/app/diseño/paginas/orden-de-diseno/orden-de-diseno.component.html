@@ -23,21 +23,21 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                            <!-- <img src="../../../assets/edit-img.png" alt="edit-img" height="18" width="18"> -->
+                            <img src="../../../../assets/imgdiseño/edit-img.png" alt="edit-img" height="18" width="18">
                           </a>
                           <a type="button" href="" (click)="getDatabyID(item.id)">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            <!-- <img src="../../../assets/details.ico" alt="details-img" height="18" width="18"> -->
+                            <img src="../../../../assets/imgdiseño/details.ico" alt="details-img" height="18" width="18">
                           </a>
                           <a type="button" (click)="deleteDataTable(item.id)">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
-                            <!-- <img src="../../../assets/delete-img.png" alt="delete-img" height="18" width="18"> -->
+                            <img src="../../../../assets/imgdiseño/delete-img.png" alt="delete-img" height="18" width="18">
                           </a>
                       </td>
                     </tr>
@@ -50,13 +50,13 @@
               <select [(ngModel)]="idclientes" name="idclientes">
                 <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
               </select><br><br><br><br>
-              <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
+              <!-- <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <!-- <img src="../../../assets/new-user-img.svg" alt="new-user-img" height="18" width="18"> -->
-              </a>
+                <img src="../../../assets/new-user-img.svg" alt="new-user-img" height="18" width="18">
+              </a> -->
           
               <a type="button" (click)="postDataTable()">
                 <span></span>
@@ -125,9 +125,11 @@
             </div>
           
             <!-- ---------------------------------------FIN Modal Cliente--------------------------------------------------------- -->
+            <!-- ---------------------------------------Inicio Modal Orden de Diseño--------------------------------------------------------- -->
+            <!-- ---------------------------------------Fin Modal Orden de Diseño--------------------------------------------------------- -->
           
           
-            <!-- ---------------------------------------INICIO Modal Detalle_Ordenes--------------------------------------------------------- -->
+            <!-- ---------------------------------------INICIO Modal Tabla de Insumos--------------------------------------------------------- -->
           
             <div class="w3-container">
               <div id="id05" class="w-modal">
@@ -206,6 +208,7 @@
                 </div>
               </div>
             </div>
+            <!-- ---------------------------------------Fin Modal Tabla de Insumos--------------------------------------------------------- -->
           
             <a type="button" class="pdf" (click)="pdf()">
               <span></span>
@@ -219,7 +222,6 @@
           </body>
           
           
-          <router-outlet></router-outlet>
     </div>
 
 </body>

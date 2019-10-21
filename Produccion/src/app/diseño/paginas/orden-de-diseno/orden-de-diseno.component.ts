@@ -32,12 +32,24 @@ export class OrdenDeDisenoComponent implements OnInit  {
     this.formularioCliente()
     this.formularioDetalleOrden()
     this.formulariOrden()
+    ///////////////////orde
+    this.getDataOrden()
     // this.getPDF()
     this.table_header = [
       {
         id: 'N°',
-        cliente: 'Cliente',
-        fecha_orden: 'Fecha Orden de Producción'
+        referencia: 'Referencia',
+        coleccion: 'Coleccion',
+        clientes: 'Cliente',
+        descripcion: 'Descripcion',
+        aprobacion:'Aprobado Por:',
+        departamentoaprovador: 'Departamento',
+        elaboracion: 'Elaborado Por:',
+        departamentodis: 'Departamento',
+        fechaelab : 'Fecha de elaboracion',
+        // fichatecnica:'Ficha Tecnica'
+        // <th>{{item.fichatecnica }}</th>
+
       }
     ]
   }
@@ -70,15 +82,15 @@ export class OrdenDeDisenoComponent implements OnInit  {
   //ORDEN DE DISENO
   formulariOrden(){
     this.formularioOrden = this.fb.group({
-      referencia: ['',[Validators.required, Validators.pattern('([0|1|2]{1})([0-9]{9})')]],
+      referencia: ['',[Validators.required, Validators.pattern('([0-9]{1,30})')]],
       coleccion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-z]{3,30}')]],
-      cliente: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
-      descripcion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      clientes:  ['',[Validators.required]],
+      descripcion: ['',[Validators.required]],
       aprobacion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
       departamentoaprovador: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
       elaboracion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
       departamentodis: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
-      // fechaelab: ['',[Validators.required]]
+      
     })
   }
   ///////////////////////
@@ -89,6 +101,8 @@ export class OrdenDeDisenoComponent implements OnInit  {
   idclientes: number
   respuestaClientes: any[]
   respuesta: any[]
+  // fechaelab = this.nuevafecha.getDate() + "/" + (this.nuevafecha.getMonth() +1) + "/" + this.nuevafecha.getFullYear()
+  respuestaOrden:any[]
   /////////////////////////////////////////////
   
   ////////////////////////////////////////////
@@ -102,6 +116,18 @@ export class OrdenDeDisenoComponent implements OnInit  {
         })
   }
 
+  ///////////////////////////////////////////////// Trae los datos de la fiche de diseño
+  getDataOrden = () => {
+    let tabla = 'F_fichadiseno'
+    this.http.get<any>(environment.API_URL + `${tabla}`)
+        .subscribe(data => {
+            this.respuestaOrden  = data.datos
+        })
+  }
+  
+  ////////////////////////////////////////////////
+
+
   postDataTable = () => {
     let tabla = 'ordenes'
     let register = {tabla: tabla, datos: [{id: this.id, fecha_orden: this.fecha_orden, idclientes: this.idclientes}]}
@@ -111,23 +137,24 @@ export class OrdenDeDisenoComponent implements OnInit  {
     })
     window.location.reload()
   }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// envia los datos del diseño ////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 postDataOrdenDis = () => {
   let referencia = this.formularioOrden.get('referencia').value
   let coleccion = this.formularioOrden.get('coleccion').value
-  let cliente = this.formularioOrden.get('cliente').value
+  let cliente = this.formularioOrden.get('clientes').value
   let descripcion = this.formularioOrden.get('descripcion').value
   let aprobacion = this.formularioOrden.get('aprobacion').value
   let departamentoaprovador = this.formularioOrden.get('departamentoaprovador').value
   let elaboracion = this.formularioOrden.get('elaboracion').value
   let departamentodis = this.formularioOrden.get('departamentodis').value
-  // let fechaelab = this.formularioOrden.get('fecha_orden').value
 
-  let tabla = 'fichaDiseno'
+
+  let tabla = 'fichadiseno'
   let register = {tabla: tabla, datos: [{ 
+                                          id: this.idOrdenes, 
                                           referencia: referencia, 
                                           coleccion: coleccion,
                                           clientes: cliente, 
@@ -145,6 +172,7 @@ postDataOrdenDis = () => {
       // this.postData = data
     })
     window.location.reload()
+    console.log('okdato')
   }else{
     Swal.fire('Datos Invalidos')
   }

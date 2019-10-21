@@ -15,6 +15,6 @@ api.get('/routeF_ordenesdetalle', control.getDatosOrdenes_detalles)
 api.get('/routeF_ordenes', control.getDatosOrdenes)
 api.get('/routebyid', control.getDatosbyID)
 api.get('/routepdf', control.getPDFordenes)
-
+api.get('/routeF_fichadiseno',control.getDatosDiseno)
 
 module.exports = api

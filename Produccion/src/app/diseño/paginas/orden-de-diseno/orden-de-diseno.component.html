@@ -7,22 +7,40 @@
               <table class="fl-table">
                 <thead *ngFor="let item of table_header">
                     <th>{{item.id}}</th>
-                    <th>{{item.cliente}}</th>
-                    <th>{{item.fecha_orden}}</th>
+                    <th>{{item.referencia}}</th>
+                    <th>{{item.coleccion}}</th>
+                    <th>{{item.clientes}}</th>
+                    <th>{{item.descripcion}}</th>
+                    <th>{{item.aprobacion}}</th>
+                    <th>{{item.departamentoaprovador}}</th>
+                    <th>{{item.elaboracion}}</th>
+                    <th>{{item.departamentodis}}</th>
+                    <th>{{item.fechaelab }}</th>
+
+
+
                     <th></th>
                 </thead>
           
                 <tbody>
-                    <tr *ngFor="let item of respuesta">
-                      <td>{{ item.id }}</td>
-                      <td>{{ item.idclientes }}</td>
-                      <td>{{ item.fecha_orden }}</td>
+                    <tr *ngFor="let item of respuestaOrden ">
+                        <td>{{item.id}}</td>
+                        <td>{{item.referencia}}</td>
+                        <td>{{item.coleccion}}</td>
+                        <td>{{item.clientes}}</td>
+                        <td>{{item.descripcion}}</td>
+                        <td>{{item.aprobacion}}</td>
+                        <td>{{item.departamentoaprovador}}</td>
+                        <td>{{item.elaboracion}}</td>
+                        <td>{{item.departamentodis}}</td>
+                        <td>{{item.fechaelab}}</td>
                       <td>
                         <a type="button" onclick="document.getElementById('id05').style.display='block'" (click)="getDatabyID(item.id)">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
+                            
                             <img src="../../../../assets/imgdiseño/edit-img.png" alt="edit-img" height="18" width="18">
                           </a>
                           <a type="button" href="" (click)="getDatabyID(item.id)">
@@ -68,12 +86,12 @@
 
             <br><br>
             <strong>CLIENTE</strong><br><br>
-            <!-- <select [(ngModel)]="idclientes" name="idclientes">
-              <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option> -->
-              <input formControlName="cliente" placeholder="Descripcion">
-              <span class="errors" *ngIf="formularioOrden.controls['cliente'].errors?.required"> Obligatorio </span>
-              <span class="errors" *ngIf="formularioOrden.controls['cliente'].errors?.pattern"> Invalido </span>
-            <!-- </select> -->
+            <select [(ngModel)]="idclientes" formControlName="clientes" name="idclientes">
+              <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.nombre}}</option>
+              <!-- <input formControlName="clientes" placeholder="Descripcion"> -->
+              <span class="errors" *ngIf="formularioOrden.controls['clientes'].errors?.required"> Obligatorio </span>
+              <span class="errors" *ngIf="formularioOrden.controls['clientes'].errors?.pattern"> Invalido </span>
+            </select>
             <br><br><br>
             <strong>DESCRIPCION</strong><br>
             <input formControlName="descripcion" placeholder="Descripcion">
@@ -104,12 +122,7 @@
             <span class="errors" *ngIf="formularioOrden.controls['departamentodis'].errors?.pattern"> Invalido </span>
 
             <br><br>
-            <!-- <strong>fecha_orden</strong><br>
-            <input formControlName="fechaelab" placeholder="Departamento">
-            <span class="errors" *ngIf="formularioOrden.controls['fechaelab'].errors?.required"> Obligatorio </span>
-            <span class="errors" *ngIf="formularioOrden.controls['fechaelab'].errors?.pattern"> Invalido </span>
-
-            <br><br> -->
+            
 
         
             <a type="button" (click)="postDataOrdenDis()" class="but">

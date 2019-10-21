@@ -16,6 +16,7 @@ export class OrdenDeDisenoComponent implements OnInit  {
   table_header: any
   clienteForm: FormGroup
   detalleOrdenForm: FormGroup
+  formularioOrden: FormGroup
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -30,6 +31,7 @@ export class OrdenDeDisenoComponent implements OnInit  {
     this.getDataTallaPrenda()
     this.formularioCliente()
     this.formularioDetalleOrden()
+    this.formulariOrden()
     // this.getPDF()
     this.table_header = [
       {
@@ -65,6 +67,21 @@ export class OrdenDeDisenoComponent implements OnInit  {
     })
   }
 
+  //ORDEN DE DISENO
+  formulariOrden(){
+    this.formularioOrden = this.fb.group({
+      referencia: ['',[Validators.required, Validators.pattern('([0|1|2]{1})([0-9]{9})')]],
+      coleccion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-z]{3,30}')]],
+      cliente: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      descripcion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      aprobacion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      departamentoaprovador: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      elaboracion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      departamentodis: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      // fechaelab: ['',[Validators.required]]
+    })
+  }
+  ///////////////////////
   //PAGINA PRINCIPAL ORDEN DE TRABAJO -------------------------------------------------------------------------------
   id: number
   nuevafecha = new Date()
@@ -72,7 +89,9 @@ export class OrdenDeDisenoComponent implements OnInit  {
   idclientes: number
   respuestaClientes: any[]
   respuesta: any[]
-
+  /////////////////////////////////////////////
+  
+  ////////////////////////////////////////////
   dataID: number
 
   getDataTable = () => {
@@ -92,7 +111,46 @@ export class OrdenDeDisenoComponent implements OnInit  {
     })
     window.location.reload()
   }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+postDataOrdenDis = () => {
+  let referencia = this.formularioOrden.get('referencia').value
+  let coleccion = this.formularioOrden.get('coleccion').value
+  let cliente = this.formularioOrden.get('cliente').value
+  let descripcion = this.formularioOrden.get('descripcion').value
+  let aprobacion = this.formularioOrden.get('aprobacion').value
+  let departamentoaprovador = this.formularioOrden.get('departamentoaprovador').value
+  let elaboracion = this.formularioOrden.get('elaboracion').value
+  let departamentodis = this.formularioOrden.get('departamentodis').value
+  // let fechaelab = this.formularioOrden.get('fecha_orden').value
+
+  let tabla = 'fichaDiseno'
+  let register = {tabla: tabla, datos: [{ 
+                                          referencia: referencia, 
+                                          coleccion: coleccion,
+                                          clientes: cliente, 
+                                          descripcion: descripcion, 
+                                          aprobacion: aprobacion,
+                                          departamentoaprovador: departamentoaprovador, 
+                                          elaboracion: elaboracion, 
+                                          departamentodis: departamentodis, 
+                                          fechaelab:this.fecha_orden
+
+                                        }]}
+  if(this.formularioOrden.valid){
+    this.http.post(environment.API_URL, register)
+    .subscribe( data => {
+      // this.postData = data
+    })
+    window.location.reload()
+  }else{
+    Swal.fire('Datos Invalidos')
+  }
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   getDataClientes = () => {
     let tabla = 'clientes'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)

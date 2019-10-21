@@ -45,26 +45,81 @@
               </table>
             </div>
           
+
+
+
+
+
+            
             <div class="options">
-              <strong>CLIENTE</strong><br><br>
-              <select [(ngModel)]="idclientes" name="idclientes">
-                <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option>
-              </select><br><br><br><br>
-              <!-- <a type="button" class="cliente_modal_style" onclick="document.getElementById('id04').style.display='block'">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <img src="../../../assets/new-user-img.svg" alt="new-user-img" height="18" width="18">
-              </a> -->
-          
-              <a type="button" (click)="postDataTable()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Generar Orden
-              </a>
+                <form [formGroup]="formularioOrden" autocomplete="off">
+
+            
+            <strong>REFERENCIA</strong><br>
+            <input formControlName="referencia" placeholder="Referencia">
+            <span class="errors" *ngIf="formularioOrden.controls['referencia'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['referencia'].errors?.pattern"> Invalido </span>
+
+            <br><br>
+            <strong>COLECCION</strong><br>
+            <input formControlName="coleccion" placeholder="Coleccion">
+            <span class="errors" *ngIf="formularioOrden.controls['coleccion'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['coleccion'].errors?.pattern"> Invalido </span>
+
+            <br><br>
+            <strong>CLIENTE</strong><br><br>
+            <!-- <select [(ngModel)]="idclientes" name="idclientes">
+              <option *ngFor="let item of respuestaClientes" value={{item.id}}>{{item.apellido}} {{item.nombre}}</option> -->
+              <input formControlName="cliente" placeholder="Descripcion">
+              <span class="errors" *ngIf="formularioOrden.controls['cliente'].errors?.required"> Obligatorio </span>
+              <span class="errors" *ngIf="formularioOrden.controls['cliente'].errors?.pattern"> Invalido </span>
+            <!-- </select> -->
+            <br><br><br>
+            <strong>DESCRIPCION</strong><br>
+            <input formControlName="descripcion" placeholder="Descripcion">
+            <span class="errors" *ngIf="formularioOrden.controls['descripcion'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['descripcion'].errors?.pattern"> Invalido </span>
+
+            <br><br>
+            <strong>APROBADO POR:</strong><br>
+            <input formControlName="aprobacion" placeholder="Aprobado Por:">
+            <span class="errors" *ngIf="formularioOrden.controls['aprobacion'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['aprobacion'].errors?.pattern"> Invalido </span>
+            <br><br>
+            <strong>DEPARTAMENTO</strong><br>
+            <input formControlName="departamentoaprovador" placeholder="Departamento">
+            <span class="errors" *ngIf="formularioOrden.controls['departamentoaprovador'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['departamentoaprovador'].errors?.pattern"> Invalido </span>
+
+            <br><br>
+            <strong>ELABORADO POR:</strong><br>
+            <input formControlName="elaboracion" placeholder="Elaborado Por:">
+            <span class="errors" *ngIf="formularioOrden.controls['elaboracion'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['elaboracion'].errors?.pattern"> Invalido </span>
+
+            <br><br>
+            <strong>DEPARTAMENTO</strong><br>
+            <input formControlName="departamentodis" placeholder="Departamento">
+            <span class="errors" *ngIf="formularioOrden.controls['departamentodis'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['departamentodis'].errors?.pattern"> Invalido </span>
+
+            <br><br>
+            <!-- <strong>fecha_orden</strong><br>
+            <input formControlName="fechaelab" placeholder="Departamento">
+            <span class="errors" *ngIf="formularioOrden.controls['fechaelab'].errors?.required"> Obligatorio </span>
+            <span class="errors" *ngIf="formularioOrden.controls['fechaelab'].errors?.pattern"> Invalido </span>
+
+            <br><br> -->
+
+        
+            <a type="button" (click)="postDataOrdenDis()" class="but">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Generar Orden
+            </a>
+                    </form>
             </div>
           
           

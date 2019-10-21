@@ -84,6 +84,10 @@
     {
         background: rgba(194, 224, 253, 0.836);
     }
+    
+::-webkit-scrollbar {
+    width: 4px;
+}
 }
 
 @mixin sidebar($color) 

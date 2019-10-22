@@ -31,9 +31,13 @@ export class OrdenDeProduccionComponent implements OnInit {
     this.formularioCliente()
     this.formularioDetalleOrden()
     this.formulariOrden()
-    ///////////////////orde
+    ///////////////////ordenDiseño
     this.getDataOrden()
     // this.getPDF()
+
+
+
+
     this.table_header = [
       {
         id: 'N°',
@@ -102,8 +106,9 @@ export class OrdenDeProduccionComponent implements OnInit {
   respuesta: any[]
   // fechaelab = this.nuevafecha.getDate() + "/" + (this.nuevafecha.getMonth() +1) + "/" + this.nuevafecha.getFullYear()
   respuestaOrden:any[]
-  /////////////////////////////////////////////
-  
+ 
+
+
   ////////////////////////////////////////////
   dataID: number
 

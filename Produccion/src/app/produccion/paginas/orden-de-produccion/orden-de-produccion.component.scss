@@ -1,0 +1,63 @@
+@import '../../../../scss/mixins';
+@import '../../../../scss/variables';
+
+
+@include tables(45%, $medium_blue);
+@include tablastyle2;
+@include options($medium_blue);
+@include buttons($medium_blue, $silver);
+@include modal;
+
+body
+{
+    font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0%;
+    // padding: 55%;
+    @include w3modal;
+    @include wmodal;
+    
+}
+.cliente_modal_style
+{
+    position: absolute;
+    top: 0;
+    right: 0; 
+}
+
+.errors
+{
+    border: 2px solid red;
+    color: red;
+}
+.pdf
+{
+    position: absolute;
+    bottom: 5%;
+    left: 80%;
+}
+
+
+//Estilos de formularios 
+
+
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+div#general {
+    
+    margin: auto;
+    margin-top: 91px;
+    max-height: 100%;
+    width: 1000px;
+    right: 0px;
+    position: static;
+    margin-left: 350px;
+    p {
+        text-align: center;
+    }
+}

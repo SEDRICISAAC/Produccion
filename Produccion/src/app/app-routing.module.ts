@@ -19,6 +19,11 @@ import { ReatasComponent } from './diseño/paginas/insumos/reatas/reatas.compone
 import { EtiquetasComponent } from './diseño/paginas/insumos/etiquetas/etiquetas.component';
 import { HilosComponent } from './diseño/paginas/insumos/hilos/hilos.component';
 import { BotonesComponent } from './diseño/paginas/insumos/botones/botones.component';
+// tabla de insumos
+import { TablaDeInsumosComponent } from './diseño/paginas/orden-de-diseno/tabla-de-insumos/tabla-de-insumos.component';
+// modulo de produccion
+import { OrdenDeProduccionComponent } from './produccion/paginas/orden-de-produccion/orden-de-produccion.component';
+import { DashProduccionComponent } from './produccion/paginas/dash-produccion/dash-produccion.component';
 
 
 
@@ -39,12 +44,21 @@ const routes: Routes = [
    { path: 'Dash', component:DashboardComponent },
    { path: 'Orden De Diseño', component: OrdenDeDisenoComponent },
    
-// modulo de diseño paginas
+// modulo de diseño paginas insumos
 { path: 'telas', component:TelasComponent },
 { path: 'reatas', component:ReatasComponent },
 { path: 'botones', component:BotonesComponent },
 { path: 'etiquetas', component:EtiquetasComponent },
 { path: 'hilos', component:HilosComponent },
+// tabla de insumos
+{ path: 'tabla de insumos', component:TablaDeInsumosComponent },
+
+// modulo de produccion
+{ path: 'OrdenProduccion', component:OrdenDeProduccionComponent },
+{ path: 'DashProduccion', component:DashProduccionComponent },
+
+
+
 
    
 

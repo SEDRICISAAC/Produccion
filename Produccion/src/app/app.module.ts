@@ -29,6 +29,12 @@ import { HilosComponent } from './diseño/paginas/insumos/hilos/hilos.component'
 import { BotonesComponent } from './diseño/paginas/insumos/botones/botones.component';
 import { ReatasComponent } from './diseño/paginas/insumos/reatas/reatas.component';
 import { EtiquetasComponent } from './diseño/paginas/insumos/etiquetas/etiquetas.component';
+import { TablaDeInsumosComponent } from './diseño/paginas/orden-de-diseno/tabla-de-insumos/tabla-de-insumos.component';
+import { OrdenDeProduccionComponent } from './produccion/paginas/orden-de-produccion/orden-de-produccion.component';
+import { NavbarProduccionComponent } from './produccion/componentes/navbar-produccion/navbar-produccion.component';
+import { SidebarProduccionComponent } from './produccion/componentes/sidebar-produccion/sidebar-produccion.component';
+import { ChartProduccionComponent } from './produccion/componentes/chart-produccion/chart-produccion.component';
+import { DashProduccionComponent } from './produccion/paginas/dash-produccion/dash-produccion.component';
 
 
 
@@ -56,6 +62,12 @@ import { EtiquetasComponent } from './diseño/paginas/insumos/etiquetas/etiqueta
     BotonesComponent,
     ReatasComponent,
     EtiquetasComponent,
+    TablaDeInsumosComponent,
+    OrdenDeProduccionComponent,
+    NavbarProduccionComponent,
+    SidebarProduccionComponent,
+    ChartProduccionComponent,
+    DashProduccionComponent,
   ],
   imports: [
     BrowserModule,

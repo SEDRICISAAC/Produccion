@@ -1,0 +1,19 @@
+*{
+    list-style: none;
+}
+canvas#lineChart{ 
+    float: left;
+    width:500px !important; 
+    height:400px !important; 
+}
+
+canvas#barChart{ 
+    float: right;
+    width:500px !important; 
+    height:400px !important; 
+}
+canvas#pieChart{ 
+
+    width:500px !important; 
+    height:400px !important; 
+}

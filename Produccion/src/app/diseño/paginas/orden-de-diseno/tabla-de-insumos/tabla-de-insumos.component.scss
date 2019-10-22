@@ -1,0 +1,14 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/mixins";
+
+@include tables(100px, $medium_blue);
+@include tablastyle2;
+body
+{
+    position: absolute;
+    top: 20%;
+    left: 90px;
+    right: 1px;
+    margin: 0%;
+    padding: 0%;
+}

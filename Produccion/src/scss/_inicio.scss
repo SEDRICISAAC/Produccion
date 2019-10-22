@@ -56,7 +56,9 @@ header{
 div.contenedor{
 	width: 200px;
 	height: 230px;
+	left: 13%;
 	float:left;
+	position: relative;
 	-webkit-transition: height .4s;
 }
 

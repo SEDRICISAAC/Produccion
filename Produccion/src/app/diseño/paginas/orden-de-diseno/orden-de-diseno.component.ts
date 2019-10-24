@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import Swal from 'sweetalert2';
+import {Lista} from '../../../models/lista.model'
 
 @Component({
   selector: 'app-orden-de-diseno',
@@ -17,6 +18,22 @@ export class OrdenDeDisenoComponent implements OnInit  {
   clienteForm: FormGroup
   detalleOrdenForm: FormGroup
   formularioOrden: FormGroup
+  fichaTecnicaForm:FormGroup
+
+  lista:Lista[]=[
+    {id:1},
+    {id:2},
+    {id:3},
+    {id:4},
+    {id:5},
+    {id:6},
+    {id:7},
+    {id:8},
+    {id:9},
+    {id:10},
+    {id:11},
+
+  ]
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -26,6 +43,10 @@ export class OrdenDeDisenoComponent implements OnInit  {
     this.getDataBotones()
     this.getDataHilos()
     this.getDataEtiquetas()
+    this.getDataMarquillasMarca()
+    this.getDataMarquillas()
+    this.getDataInstrucciones()
+    this.getDataMarquillasForma()
     this.getDataClientes()
     this.getDataTipoPrenda()
     this.getDataTallaPrenda()
@@ -35,6 +56,13 @@ export class OrdenDeDisenoComponent implements OnInit  {
     ///////////////////orde
     this.getDataOrden()
     // this.getPDF()
+    // ficha tecnica 
+    this.formularioFicha()
+    this.getDataEtiquetaBarra()
+    this.getDataReata()
+
+
+
     this.table_header = [
       {
         id: 'N°',
@@ -79,6 +107,42 @@ export class OrdenDeDisenoComponent implements OnInit  {
     })
   }
 
+  // ficha tecnica
+  formularioFicha(){
+    this.fichaTecnicaForm = this.fb.group({
+      codigo: ['',[Validators.required]],
+      tela_principal: ['',[Validators.required]],
+      cantidad_tela_principal: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      combinacion1: ['',[Validators.required]],
+      cantidadCombinacion1: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      combinacion2: ['',[Validators.required]],
+      cantidadCombinacion2: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      hilo: ['',[Validators.required]],
+      cantidadHilo: ['',[Validators.required, Validators.pattern]],
+      boton18: ['',[Validators.required]],
+      cantidadBoton18: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      boton14: ['',[Validators.required]],
+      cantidadBoton14: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      marquilla1: ['',[Validators.required]],
+      cantidadMarquilla1: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      cantidadMarquilla2: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      cantidadMarquilla3: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      cantidadMarquilla4: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      cantidadMarquilla5: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      cantidadMarquilla6: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      cantidadMarquilla7: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      marquilla8: ['',[Validators.required]],
+      cantidadMarquilla8: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      instruccioncui: ['',[Validators.required,Validators.pattern]],
+      etiquetas: ['',[Validators.required]],
+      etiquetas1: ['',[Validators.required]],
+      reata: ['',[Validators.required]],
+      cantidadReata: ['',[Validators.required, Validators.pattern('[0-9]{1,8}')]],
+      consumoEntretela: ['',[Validators.required]],
+     
+    })
+  }
+
   //ORDEN DE DISENO
   formulariOrden(){
     this.formularioOrden = this.fb.group({
@@ -86,10 +150,10 @@ export class OrdenDeDisenoComponent implements OnInit  {
       coleccion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-z]{3,30}')]],
       clientes:  ['',[Validators.required]],
       descripcion: ['',[Validators.required]],
-      aprobacion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
-      departamentoaprovador: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
-      elaboracion: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
-      departamentodis: ['',[Validators.required, Validators.pattern('[A-Za-z]{1}[a-zñ]{3,30}')]],
+      aprobacion:  ['',[Validators.required]],
+      departamentoaprovador: ['',[Validators.required]],
+      elaboracion:  ['',[Validators.required]],
+      departamentodis:  ['',[Validators.required]],
       
     })
   }
@@ -195,16 +259,16 @@ postDataOrdenDis = () => {
   }
 
   getDatabyID = (value) => {
-    let tabla = 'ordenes'
-    this.http.get<any>(environment.API_URL + `byid?tabla=${tabla}&&id=${value}`)
+    let tabla = 'fichadiseno'
+    this.http.get<any>(environment.API_URL + `F_fichatecnica?tabla=${tabla}&&codigo=${value}`)
     .subscribe( data => { 
-      this.idOrdenes = data.datos[0].id
-      localStorage.setItem("id", this.idOrdenes.toString() )
+      this.codigo = data.datos[0].codigo
+      localStorage.setItem("codigo", this.codigo.toString() )
     })
   }
   //PAGINA PRINCIPAL ORDEN DE TRABAJO -------------------------------------------------------------------------------
-
-
+codigo:number
+  referencia:number[]
   // GET DATA TO MODAL DETALLE ORDEN --------------------------------------------------------------------------------
   respuestaTelas: any[]
   respuestaBotones: any[]
@@ -212,6 +276,13 @@ postDataOrdenDis = () => {
   respuestaEtiquetas: any[]
   respuestaTipoPrenda: any[]
   respuestaTallaPrenda: any[]
+  respuestaMarquillasMarca:any[]
+  respuestaMarquillas:any[]
+  respuestaEtiquetaBarra:any[]
+  respuestaInstrucciones:any[]
+  respuestaMarquillasForma:any[]
+  respuestaReatas:any[]
+
   
   getDataTelas = () => {
     let tabla = 'telas'
@@ -244,6 +315,46 @@ postDataOrdenDis = () => {
             this.respuestaEtiquetas = data.datos
         })
   }
+  getDataMarquillasMarca= () => {
+    let tabla = 'marquillasmarca'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaMarquillasMarca = data.datos
+        })
+  }
+
+  getDataMarquillas= () => {
+    let tabla = 'marquillas'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaMarquillas = data.datos
+        })
+  }
+
+  getDataInstrucciones= () => {
+    let tabla = 'instruccionescuidado'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaInstrucciones = data.datos
+        })
+  }
+
+
+  getDataMarquillasForma= () => {
+    let tabla = 'marquillasforma'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaMarquillasForma = data.datos
+        })
+  }
+  getDataEtiquetaBarra= () => {
+    let tabla = 'etiquetascodigobarra'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaEtiquetaBarra = data.datos
+        })
+  }
+  
 
   getDataTipoPrenda= () => {
     let tabla = 'tipo_prendas'
@@ -252,7 +363,13 @@ postDataOrdenDis = () => {
             this.respuestaTipoPrenda = data.datos
         })
   }
-
+  getDataReata= () => {
+    let tabla = 'reatas'
+    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+        .subscribe(data => {
+            this.respuestaReatas = data.datos
+        })
+  }
   getDataTallaPrenda= () => {
     let tabla = 'talla_prendas'
     this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
@@ -261,7 +378,85 @@ postDataOrdenDis = () => {
         })
   }
   // GET DATA TO MODAL DETALLE ORDEN --------------------------------------------------------------------------------
+idorden:number
 
+
+  // Ficha Tecnica
+  postDataDetalleFicha = () => {
+    let codigo = this.fichaTecnicaForm.get('codigo').value
+    let tela_principal = this.fichaTecnicaForm.get('tela_principal').value
+    let cantidad_tela_principal = this.fichaTecnicaForm.get('cantidad_tela_principal').value
+    let combinacion1 = this.fichaTecnicaForm.get('combinacion1').value
+    let cantidadCombinacion1 = this.fichaTecnicaForm.get('cantidadCombinacion1').value
+    let combinacion2 = this.fichaTecnicaForm.get('combinacion2').value
+    let cantidadCombinacion2= this.fichaTecnicaForm.get('cantidadCombinacion2').value
+    let hilo  = this.fichaTecnicaForm.get('hilo').value
+    let cantidadHilo = this.fichaTecnicaForm.get('cantidadHilo').value
+    let boton18 = this.fichaTecnicaForm.get('boton18').value
+    let cantidadBoton18 = this.fichaTecnicaForm.get('cantidadBoton18').value
+    let boton14 = this.fichaTecnicaForm.get('boton14').value
+    let cantidadBoton14 = this.fichaTecnicaForm.get('cantidadBoton14').value
+    let marquilla1 = this.fichaTecnicaForm.get('marquilla1').value
+    let cantidadMarquilla1 = this.fichaTecnicaForm.get('cantidadMarquilla1').value
+    let cantidadMarquilla2 = this.fichaTecnicaForm.get('cantidadMarquilla2').value
+    let cantidadMarquilla3 = this.fichaTecnicaForm.get('cantidadMarquilla3').value
+    let cantidadMarquilla4 = this.fichaTecnicaForm.get('cantidadMarquilla4').value
+    let cantidadMarquilla5 = this.fichaTecnicaForm.get('cantidadMarquilla5').value
+    let cantidadMarquilla6 = this.fichaTecnicaForm.get('cantidadMarquilla6').value
+    let cantidadMarquilla7 = this.fichaTecnicaForm.get('cantidadMarquilla7').value
+    let instruccioncui = this.fichaTecnicaForm.get('instruccioncui').value
+    let marquilla8 = this.fichaTecnicaForm.get('marquilla8').value
+    let cantidadMarquilla8 = this.fichaTecnicaForm.get('cantidadMarquilla8').value
+    let reata = this.fichaTecnicaForm.get('reata').value
+    let cantidadReata = this.fichaTecnicaForm.get('cantidadReata').value
+    let etiquetas = this.fichaTecnicaForm.get('etiquetas').value
+    let etiquetas1 = this.fichaTecnicaForm.get('etiquetas1').value
+    let consumoEntretela = this.fichaTecnicaForm.get('consumoEntretela').value
+   
+    let tabla = 'fichatecnica'
+    let register = {tabla: tabla, datos: [{ 
+                                            codigo: codigo , 
+                                            telaprincipal:tela_principal,
+                                            cantidadtelaprincipal: cantidad_tela_principal,
+                                            combinacion1:combinacion1,
+                                            cantidadcombinacion1:cantidadCombinacion1,
+                                            combinacion2: combinacion2,
+                                            cantidadcombinacion2: cantidadCombinacion2,
+                                            hilo: hilo ,
+                                            consumohilo: cantidadHilo,
+                                            boton18: boton18,
+                                            cantidadboton18: cantidadBoton18,
+                                            boton14: boton14  , 
+                                            cantidadboton14: cantidadBoton14 , 
+                                            marquillamarca: marquilla1 , 
+                                            cantidadmarquillamarca: cantidadMarquilla1 , 
+                                            cantidadmarquillats: cantidadMarquilla2 , 
+                                            cantidadmarquillatm: cantidadMarquilla3, 
+                                            cantidadmarquillatl: cantidadMarquilla4 , 
+                                            cantidadmarquillatxl: cantidadMarquilla5 ,
+                                            cantidadmarquillatxxl: cantidadMarquilla6 ,  
+                                            cantidadmarquillatxxxl: cantidadMarquilla7 , 
+                                            instruccioncuidado:instruccioncui,
+                                            marquillaforma:marquilla8,
+                                            cantidadmarquillaforma:cantidadMarquilla8,
+                                            reata:reata,
+                                            cantidadreata:cantidadReata,
+                                            etiqueta:etiquetas,
+                                            etiquetacodbarras:etiquetas1,
+                                            consumoentretela:consumoEntretela,
+                                          }]}
+    if(this.fichaTecnicaForm.valid){
+      this.http.post(environment.API_URL, register)
+      .subscribe( data => {
+        // this.postData = data
+      })
+      window.location.reload()
+      // console.log('superbien')
+    }else{
+      Swal.fire('Datos Invalidos')
+    }
+
+  }
 
   //POST MODAL CLIENTES -----------------------------------------------------------------------
   postDataClientes = () => {
@@ -309,7 +504,6 @@ postDataOrdenDis = () => {
 
     let tabla = 'ordenes_detalle'
     let register = {tabla: tabla, datos: [{ 
-                                            idordenes: this.idOrdenes, 
                                             idtela: f_telas,
                                             idboton: f_botones,
                                             idhilo: f_hilos,

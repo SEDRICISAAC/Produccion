@@ -17,17 +17,16 @@ export class HilosComponent implements OnInit  {
   ngOnInit() {
   
 
-    this.getDataProductos()
+    // this.getDataProductos()
     this.getData()
     this.table_header = [
       {
         id: 'N°',
-        nombretela : 'Nombre',
-        textura: 'Textura',
-        colortela: 'Color tela',
-        diseno: 'Diseño Tela',
-        material: 'Material Tela',
-        proveedor: 'Proveedor'
+        nombre : 'Nombre',
+        materialhilos: 'Material',
+        tipo: 'Tipo ',
+        colorhilos: 'Color Hilos',
+        proveedor: 'Proveedor',
       }
     ]
   }
@@ -35,13 +34,13 @@ export class HilosComponent implements OnInit  {
   
   respuestaProductos:any[]
 
-  getDataProductos=()=>{
-    let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-    .subscribe(data => {
-      this.respuestaProductos = data.datos
-  })
-  }
+  // getDataProductos=()=>{
+  //   let tabla = 'telas'
+  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+  //   .subscribe(data => {
+  //     this.respuestaProductos = data.datos
+  // })
+  // }
  
 
 
@@ -50,8 +49,8 @@ export class HilosComponent implements OnInit  {
     return id
   }
   getData = () => {
-    let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `telasAPI?tabla=${this.getLocalStorage()}`)
+    let tabla = 'hilos'
+    this.http.get<any>(environment.API_URL + `hilosAPI?tabla=${this.getLocalStorage()}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })

@@ -7,23 +7,25 @@
                                 <table class="table table-1">
                                     <thead *ngFor="let item of table_header">
                                         <th>{{item.id}}</th>
-                                        <th>{{item.nombretela}}</th>
-                                        <th>{{item.textura}}</th>
-                                        <th>{{item.colortela}}</th>
-                                        <th>{{item.diseno}}</th>
+                                        <th>{{item. nombre }}</th>
+                                        <th>{{item.dimensiones}}</th>
+                                        <th>{{item. tipo}}</th>
+                                        <th>{{item.idforma}}</th>
+                                        <th>{{item.idcolorboton}}</th>
                                         <th>{{item.material}}</th>
                                         <th>{{item.proveedor}}</th>
                                     </thead>
                         
                                     <tbody>
                                         <tr *ngFor="let item of respuesta">
-                                       <th>{{item.id}}</th>
-                                        <th>{{item.nombretela}}</th>
-                                        <th>{{item.textura}}</th>
-                                        <th>{{item.colortela}}</th>
-                                        <th>{{item.diseno}}</th>
-                                        <th>{{item.material}}</th>
-                                        <th>{{item.proveedor}}</th>
+                                                <th>{{item.id}}</th>
+                                                <th>{{item. nombre }}</th>
+                                                <th>{{item.dimensiones}}</th>
+                                                <th>{{item. tipo}}</th>
+                                                <th>{{item.idforma}}</th>
+                                                <th>{{item.idcolorboton}}</th>
+                                                <th>{{item.material}}</th>
+                                                <th>{{item.proveedor}}</th>
                                         </tr>
                                     </tbody>
                                 </table>

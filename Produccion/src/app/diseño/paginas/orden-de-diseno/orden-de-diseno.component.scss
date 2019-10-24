@@ -5,11 +5,12 @@
 @import '../../../../scss/variables';
 
 
-@include tables(45%, $medium_blue);
+@include tables(43%, $medium_blue);
 @include tablastyle2;
 @include options($medium_blue);
 @include buttons($medium_blue, $silver);
 @include modal;
+
 
 body
 {
@@ -17,7 +18,7 @@ body
     margin: 0%;
     // padding: 55%;
     @include w3modal;
-    @include wmodal;
+    @include w2-modal;
     
 }
 .cliente_modal_style

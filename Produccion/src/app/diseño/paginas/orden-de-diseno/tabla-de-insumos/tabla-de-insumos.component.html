@@ -3,35 +3,74 @@
         <app-sidebar></app-sidebar>
         <div id="general">
 <body>
-        <h2>Resumen</h2>
         <div class="tablediv">
             <table class="fl-table">
                 <thead *ngFor="let item of table_header">
-                    <th>{{item.idBoton}}</th>
-                    <th>{{item.botonCantidad}}</th>
-                    <th>{{item.idTela}}</th>
-                    <th>{{item.telaCantidad}}</th>
-                    <th>{{item.idHilo}}</th>
-                    <th>{{item.hiloCantidad}}</th>
-                    <th>{{item.idEtiqueta}}</th>
-                    <th>{{item.etiquetaCantidad}}</th>
-                    <th>{{item.idTipoPrenda}}</th>
-                    <th>{{item.idTallaPrenda}}</th>
+                    <th>{{item.id}}</th>
+                    <th>{{item. codigo}}</th>
+                    <th>{{item.telaprincipal}}</th>
+                    <th>{{item. cantidadtelaprincipal}}</th>
+                    <th>{{item.combinacion1}}</th>
+                    <th>{{item.cantidadcombinacion1}}</th>
+                    <th>{{item.combinacion2}}</th>
+                    <th>{{item.cantidadcombinacion2}}</th>
+                    <th>{{item.hilo}}</th>
+                    <th>{{item.consumohilo}}</th>
+                    <th>{{item.boton18}}</th>
+                    <th>{{item.cantidadboton18}}</th>
+                    <th>{{item.boton14}}</th>
+                    <th>{{item.cantidadboton14}}</th>
+                    <th>{{item.marquillamarca}}</th>
+                    <th>{{item.cantidadmarquillamarca}}</th>
+                    <th>{{item.cantidadmarquillats}}</th>
+                    <th>{{item.cantidadmarquillatm}}</th>
+                    <th>{{item.cantidadmarquillatl}}</th>
+                    <th>{{item.cantidadmarquillatxl}}</th>
+                    <th>{{item.cantidadmarquillatxxl}}</th>
+                    <th>{{item.cantidadmarquillatxxxl}}</th>
+                    <th>{{item.instruccioncuidado}}</th>
+                    <th>{{item.marquillaforma}}</th>
+                    <th>{{item.cantidadmarquillaforma}}</th>  
+                    <th>{{item.reata}}</th>
+                    <th>{{item.cantidadreata}}</th>
+                    <th>{{item.etiqueta}}</th>
+                    <th>{{item.etiquetacodbarras}}</th>
+                    <th>{{item.consumoentretela}}</th>
                     <th></th>
                 </thead>
     
                 <tbody>
                     <tr *ngFor="let item of respuesta">
-                        <td>{{item.idboton}}</td>
-                        <td>{{item.boton_cantidad}}</td>
-                        <td>{{item.idtela}}</td>
-                        <td>{{item.tela_cantidad}}</td>
-                        <td>{{item.idhilo}}</td>
-                        <td>{{item.hilo_cantidad}}</td>
-                        <td>{{item.idetiqueta}}</td>
-                        <td>{{item.etiqueta_cantidad}}</td>
-                        <td>{{item.idtipoprenda}}</td>
-                        <td>{{item.idtallaprendas}}</td>
+                            <td>{{item.id}}</td>
+                            <td>{{item. codigo}}</td>
+                            <td>{{item.telaprincipal}}</td>
+                            <td>{{item. cantidadtelaprincipal}}</td>
+                            <td>{{item.combinacion1}}</td>
+                            <td>{{item.cantidadcombinacion1}}</td>
+                            <td>{{item.combinacion2}}</td>
+                            <td>{{item.cantidadcombinacion2}}</td>
+                            <td>{{item.hilo}}</td>
+                            <td>{{item.consumohilo}}</td>
+                            <td>{{item.boton18}}</td>
+                            <td>{{item.cantidadboton18}}</td>
+                            <td>{{item.boton14}}</td>
+                            <td>{{item.cantidadboton14}}</td>
+                            <td>{{item.marquillamarca}}</td>
+                            <td>{{item.cantidadmarquillamarca}}</td>
+                            <td>{{item.cantidadmarquillats}}</td>
+                            <td>{{item.cantidadmarquillatm}}</td>
+                            <td>{{item.cantidadmarquillatl}}</td>
+                            <td>{{item.cantidadmarquillatxl}}</td>
+                            <td>{{item.cantidadmarquillatxxl}}</td>
+                            <td>{{item.cantidadmarquillatxxxl}}</td>
+                            <td>{{item.instruccioncuidado}}</td>
+                            <td>{{item.marquillaforma}}</td>
+                            <td>{{item.cantidadmarquillaforma}}</td>
+                            <td>{{item.reata}}</td>
+                            <td>{{item.cantidadreata}}</td>
+                            <td>{{item.etiqueta}}</td>
+                            <td>{{item.etiquetacodbarras}}</td>
+                            <td>{{item.consumoentretela}}</td>
                         <td>
                             <a type="button" (click)="deleteDataTable(item.id)" routerLink="/ordentrabajo">
                                 <span></span>

@@ -17,17 +17,13 @@ export class ReatasComponent implements OnInit  {
   ngOnInit() {
   
 
-    this.getDataProductos()
+    // this.getDataProductos()
     this.getData()
     this.table_header = [
       {
         id: 'N°',
-        nombretela : 'Nombre',
-        textura: 'Textura',
-        colortela: 'Color tela',
-        diseno: 'Diseño Tela',
-        material: 'Material Tela',
-        proveedor: 'Proveedor'
+        nombre : 'Nombre',
+        caracteristica: 'Caracteristica',
       }
     ]
   }
@@ -35,13 +31,13 @@ export class ReatasComponent implements OnInit  {
   
   respuestaProductos:any[]
 
-  getDataProductos=()=>{
-    let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-    .subscribe(data => {
-      this.respuestaProductos = data.datos
-  })
-  }
+  // getDataProductos=()=>{
+  //   let tabla = 'telas'
+  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+  //   .subscribe(data => {
+  //     this.respuestaProductos = data.datos
+  // })
+  // }
  
 
 
@@ -50,8 +46,8 @@ export class ReatasComponent implements OnInit  {
     return id
   }
   getData = () => {
-    let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `telasAPI?tabla=${this.getLocalStorage()}`)
+    let tabla = 'reatas'
+    this.http.get<any>(environment.API_URL + `reatasAPI?tabla=${this.getLocalStorage()}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })

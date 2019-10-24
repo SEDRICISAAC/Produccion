@@ -200,7 +200,7 @@
             <!-- ---------------------------------------INICIO Modal Tabla de Insumos--------------------------------------------------------- -->
           
             <div class="w3-container">
-              <div id="id05" class="w-modal">
+              <div id="id05" class="w2-modal">
                 <div class="w3-modal-content">
                   <header>
                     <span onclick="document.getElementById('id05').style.display='none'" class="w3-display-topright">&times;</span>
@@ -209,67 +209,230 @@
                         
                   <div class="optione">
           
-                    <form [formGroup]="detalleOrdenForm" autocomplete="off">
-                        <strong>TIPO DE PRENDA</strong><br>
-                        <select formControlName="f_tipoPrenda">
-                          <option *ngFor="let item of respuestaTipoPrenda" value={{item.id}}>{{item.nombre}}</option>
+                    <form [formGroup]="fichaTecnicaForm" autocomplete="off">
+                        <strong>Codigo</strong><br>
+                        <select formControlName="codigo">
+                          <option *ngFor="let item of respuestaOrden" value={{item.id}}>{{item.referencia}}</option>
                         </select>
-                        <span class="errors" *ngIf="detalleOrdenForm.controls['f_tipoPrenda'].errors?.required"> Obligatorio </span>
+                        <span class="errors" *ngIf="fichaTecnicaForm.controls['codigo'].errors?.required"> Obligatorio </span>
                         <br><br>
-            
-                        <strong>TALLA DE LA PRENDA</strong><br>
-                        <select formControlName="f_tallaPrenda">
-                          <option *ngFor="let item of respuestaTallaPrenda" value={{item.id}}>{{item.nombre}}</option>
-                        </select>
-                        <span class="errors" *ngIf="detalleOrdenForm.controls['f_tallaPrenda'].errors?.required"> Obligatorio </span>
-                        <br><br>
-            
-                        <strong>ETIQUETAS</strong><br>
-                        <select formControlName="f_etiquetas">
-                          <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
-                        </select>
-                        <span class="errors" *ngIf="detalleOrdenForm.controls['f_etiquetas'].errors?.required"> Obligatorio </span>
-                        <input placeholder="Cantidad" formControlName="f_cantidadEtiquetas">
-                        <br>
-                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadEtiquetas'].errors?.pattern"> Cantidad inválida </span>
-                        <br>
-                
-                        <strong>BOTONES</strong><br>
-                        <select formControlName="f_botones">
-                          <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
-                        </select>
-                        <span class="errors" *ngIf="detalleOrdenForm.controls['f_botones'].errors?.required"> Obligatorio </span>
-                        <input placeholder="Cantidad" formControlName="f_cantidadBotones">
-                        <br>
-                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadBotones'].errors?.pattern"> Cantidad inválida </span>
-                        <br>
-                
-                        <strong>HILOS</strong><br>
-                        <select formControlName="f_hilos">
-                          <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
-                        </select>
-                        <span class="errors" *ngIf="detalleOrdenForm.controls['f_hilos'].errors?.required"> Obligatorio</span>
-                        <input placeholder="Cantidad" formControlName="f_cantidadHilos">
-                        <br>
-                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadHilos'].errors?.pattern"> Cantidad inválida </span>
-                        <br>
-                
-                        <strong>TELAS</strong><br>
-                        <select formControlName="f_telas">
+                        <!-- -------------------------------------------------------------------------------------------- -->
+                        <strong>Tela Principal</strong><br>
+                        <select formControlName="tela_principal">
                           <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
                         </select>
-                        <span class="errors" *ngIf="detalleOrdenForm.controls['f_telas'].errors?.required"> Obligatorio </span>
-                        <input placeholder="Cantidad en Metros" formControlName="f_cantidadTelas">
+                        <span class="errors" *ngIf="fichaTecnicaForm.controls['tela_principal'].errors?.required"> Obligatorio </span>
+                        
+                        <input placeholder="Cantidad en metros" formControlName="cantidad_tela_principal">
                         <br>
-                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadTelas'].errors?.pattern"> Cantidad inválida </span>
+                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidad_tela_principal'].errors?.pattern"> Cantidad inválida </span>
                         <br>
-                        <a type="button" (click)="postDataDetalleOrden()" class="but">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          Guardar
-                        </a>
+                        <!-- --------------------------------------------------------------------------------------- -->
+                        <strong>Combinacion1</strong><br>
+                        <select formControlName="combinacion1">
+                          <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
+                        </select>
+                        <span class="errors" *ngIf="fichaTecnicaForm.controls['combinacion1'].errors?.required"> Obligatorio </span>
+                        
+                        <input placeholder="Cantidad en Metros" formControlName="cantidadCombinacion1">
+                        <br>
+                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadCombinacion1'].errors?.pattern"> Cantidad inválida </span>
+                        <br>
+                        <!-- --------------------------------------------------------------------------------------- -->
+                        <strong>Combinacion2</strong><br>
+                        <select formControlName="combinacion2">
+                          <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
+                        </select>
+                        <span class="errors" *ngIf="fichaTecnicaForm.controls['combinacion2'].errors?.required"> Obligatorio </span>
+                        
+                        <input placeholder="Cantidad en Metros" formControlName="cantidadCombinacion2">
+                        <br>
+                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadCombinacion2'].errors?.pattern"> Cantidad inválida </span>
+                        <br>
+                        <!-- --------------------------------------------------------------------------------------- -->
+                        <strong>Hilo</strong><br>
+                        <select formControlName="hilo">
+                          <option *ngFor="let item of respuestaHilos" value={{item.id}}>{{item.nombre}}</option>
+                        </select>
+                        <span class="errors" *ngIf="fichaTecnicaForm.controls['hilo'].errors?.required"> Obligatorio </span>
+                        
+                        <input placeholder="Consumo de Hilo en Metros" formControlName="cantidadHilo">
+                        <br>
+                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadHilo'].errors?.pattern"> Cantidad inválida </span>
+                        <br>
+                        <!-- --------------------------------------------------------------------------------------- -->
+                        <strong>Boton 18/4</strong><br>
+                        <select formControlName="boton18">
+                          <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
+                        </select>
+                        <span class="errors" *ngIf="fichaTecnicaForm.controls['boton18'].errors?.required"> Obligatorio </span>
+                        
+                        <input placeholder="Cantidad usada" formControlName="cantidadBoton18">
+                        <br>
+                        <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadBoton18'].errors?.pattern"> Cantidad inválida </span>
+                        <br>
+                        <!-- --------------------------------------------------------------------------------------- -->
+                        <strong>Boton 14/4</strong><br>                        
+                        <select formControlName="boton14">
+                            <option *ngFor="let item of respuestaBotones" value={{item.id}}>{{item.nombre}}</option>
+                          </select>
+                          <span class="errors" *ngIf="fichaTecnicaForm.controls['boton14'].errors?.required"> Obligatorio </span>
+                         
+                          <input placeholder="Cantidad usada" formControlName="cantidadBoton14">
+                          <br>
+                          <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadBoton14'].errors?.pattern"> Cantidad inválida </span>
+                          <br>
+                          <!-- --------------------------------------------------------------------------------------- -->
+                          <strong>Marca de marquilla</strong><br>                        
+                        <select formControlName="marquilla1">
+                            <option *ngFor="let item of respuestaMarquillasMarca" value={{item.id}}>{{item.nombre}}</option>
+                          </select>
+                          <span class="errors" *ngIf="fichaTecnicaForm.controls['marquilla1'].errors?.required"> Obligatorio </span>
+                         
+                          <input placeholder="Cantidad usada" formControlName="cantidadMarquilla1">
+                          <br>
+                          <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla1'].errors?.pattern"> Cantidad inválida </span>
+                          <br>
+                          <!-- --------------------------------------------------------------------------------------- -->
+                          <strong>Marquilla T/S</strong><br>    
+                          <select formControlName="cantidadMarquilla2">
+                              <option *ngFor="let list of lista"    [value]="list.id">{{list.id}}</option>
+                            </select>
+                            <span class="errors" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla2'].errors?.required"> Obligatorio </span>
+                          <br>
+                          <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla2'].errors?.pattern"> Cantidad inválida </span>
+                          <br>
+                          <!-- --------------------------------------------------------------------------------------- -->
+                          <strong>Marquilla T/M</strong><br>
+                          <select formControlName="cantidadMarquilla3">
+                              <option *ngFor="let list of lista"    [value]="list.id">{{list.id}}</option>
+                            </select>    
+                            <span class="errors" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla3'].errors?.required"> Obligatorio </span>
+
+                          <br>
+                          <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla3'].errors?.pattern"> Cantidad inválida </span>
+                          <br>
+                          <!-- --------------------------------------------------------------------------------------- -->
+                        
+                         <!-- --------------------------------------------------------------------------------------- -->
+                         <div class="indiv"> 
+                           <strong>Marquilla T/L</strong><br> 
+                            <select formControlName="cantidadMarquilla4">
+                                <option *ngFor="let list of lista"    [value]="list.id">{{list.id}}</option>
+                              </select>   
+                            <span class="errors" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla4'].errors?.required"> Obligatorio </span>                                 
+                              <br>
+                              <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla4'].errors?.pattern"> Cantidad inválida </span>
+                              <br>
+                              <!-- ----------------------------------------------------------------------------------------- -->
+                           <strong>Marquilla T/XL</strong><br>   
+                           <select formControlName="cantidadMarquilla5">
+                              <option *ngFor="let list of lista"    [value]="list.id">{{list.id}}</option>
+                            </select>    
+                            <span class="errors" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla5'].errors?.required"> Obligatorio </span>
+
+                          <br>
+                          <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla5'].errors?.pattern"> Cantidad inválida </span>
+                          <br>
+                           <!-- --------------------------------------------------------------------------------------- -->
+                           <strong>Marquilla T/XXL</strong><br>  
+                           <select formControlName="cantidadMarquilla6">
+                              <option *ngFor="let list of lista"    [value]="list.id">{{list.id}}</option>
+                            </select>    
+                            <span class="errors" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla6'].errors?.required"> Obligatorio </span>
+
+                             <br>
+                             <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla6'].errors?.pattern"> Cantidad inválida </span>
+                             <br>
+                             <!-- --------------------------------------------------------------------------------------- -->
+                             <strong>Marquilla T/XXXL</strong><br>  
+                             <select formControlName="cantidadMarquilla7">
+                                <option *ngFor="let list of lista"    [value]="list.id">{{list.id}}</option>
+                              </select>  
+                            <span class="errors" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla7'].errors?.required"> Obligatorio </span>
+                             <br>
+                             <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla7'].errors?.pattern"> Cantidad inválida </span>
+                             <br>
+                             <!-- --------------------------------------------------------------------------------------- -->
+                             <strong>Instruccion de cuidado</strong><br>                        
+                           <select formControlName="instruccioncui">
+                               <option *ngFor="let item of respuestaInstrucciones" value={{item.id}}>{{item.nombre}}</option>
+                             </select>
+                             <span class="errors" *ngIf="fichaTecnicaForm.controls['instruccioncui'].errors?.required"> Obligatorio </span>
+                             <br>
+                             <br>
+
+                             
+                             <!-- --------------------------------------------------------------------------------------- -->
+                             <strong>Marquilla Forma</strong><br>                        
+                           <select formControlName="marquilla8">
+                               <option *ngFor="let item of respuestaMarquillasForma" value={{item.id}}>{{item.nombre}}</option>
+                             </select>
+                             <span class="errors" *ngIf="fichaTecnicaForm.controls['marquilla8'].errors?.required"> Obligatorio </span>
+                             <input placeholder="Cantidad usada" formControlName="cantidadMarquilla8" class="input">
+                             <br>
+                             <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadMarquilla8'].errors?.pattern"> Cantidad inválida </span>
+                             <br>
+                             <!-- --------------------------------------------------------------------------------------- -->
+                             <strong>Reata</strong><br>                        
+                           <select formControlName="reata">
+                               <option *ngFor="let item of respuestaReatas" value={{item.id}}>{{item.nombre}}</option>
+                             </select>
+                             <span class="errors" *ngIf="fichaTecnicaForm.controls['reata'].errors?.required"> Obligatorio </span>
+                            
+                             <input placeholder="Cantidad Usada en Metros" formControlName="cantidadReata" class="input">
+                             <br>
+                             <span class="errors" style="position: absolute; left: 60%;" *ngIf="fichaTecnicaForm.controls['cantidadReata'].errors?.pattern"> Cantidad inválida </span>
+                             <br>
+                             <!-- --------------------------------------------------------------------------------------- -->
+                           <strong>ETIQUETAS</strong><br>
+                           <select formControlName="etiquetas">
+                             <option *ngFor="let item of respuestaEtiquetas" value={{item.id}}>{{item.nombre}}</option>
+                           </select>
+                           <span class="errors" *ngIf="fichaTecnicaForm.controls['etiquetas'].errors?.required"> Obligatorio </span>
+                           <br>
+                           <br>
+
+                          
+                           <!-- ---------------------------------------------------------------------------------------- -->
+                           <strong>Etiqueta codigo de barras</strong><br>
+                           <select formControlName="etiquetas1">
+                             <option *ngFor="let item of respuestaEtiquetaBarra" value={{item.id}}>{{item.nombre}}</option>
+                           </select>
+                           <span class="errors" *ngIf="fichaTecnicaForm.controls['etiquetas1'].errors?.required"> Obligatorio </span>
+                           <br>
+                           <br>
+
+                          
+                           <!-- ---------------------------------------------------------------------------------------- -->
+                           
+                           
+                           <strong>Consumo Entretelas</strong><br>
+                           <!-- <select formControlName="f_telas">
+                             <option *ngFor="let item of respuestaTelas" value={{item.id}}>{{item.nombre}}</option>
+                           </select>
+                           <span class="errors" *ngIf="detalleOrdenForm.controls['f_telas'].errors?.required"> Obligatorio </span> -->
+                           <input placeholder="Cantidad en Metros" formControlName="consumoEntretela" class="input">
+                           <br>
+                           
+                           <span class="errors" style="position: absolute; left: 60%;" *ngIf="detalleOrdenForm.controls['f_cantidadTelas'].errors?.pattern"> Cantidad inválida </span>
+                           <br>
+                           <br>
+                           <br>
+                           <br>
+
+
+
+                           <a type="button" (click)="postDataDetalleFicha()" class="but">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                              Guardar
+                            </a>
+                        </div> 
+                         
+                       
                       </form>
           
                   </div>

@@ -118,6 +118,46 @@ let getDatosOrdenes_detalles = (req, res) => {
         })
     })
 }
+// -----------------------------------------------------------------------------------------fichatecnica
+let getDatosfichatecnica = (req, res) => {
+    let codigo = req.query.codigo
+    db.raw(`select id,codigo,
+    (select tela_principal(telaprincipal)) as telaprincipal, cantidadtelaprincipal ,
+    (select combinacion1(combinacion1)) as combinacion1, cantidadcombinacion1 ,
+    (select combinacion2(combinacion2)) as combinacion2 , cantidadcombinacion2,
+    (select hilo(hilo)) as hilo, consumohilo,
+    (select boton18(boton18)) as boton18, cantidadboton18,
+    (select boton14(boton14)) as boton14, cantidadboton14,
+    (select marquilla1(marquillamarca)) as marquillamarca,cantidadmarquillamarca,
+    cantidadmarquillats,cantidadmarquillatm ,cantidadmarquillatl ,cantidadmarquillatxl,cantidadmarquillatxxl,cantidadmarquillatxxxl,
+    (select instruccioncui(instruccioncuidado)) as  instruccioncuidado,
+    (select marquilla8(marquillaforma)) as marquillaforma,cantidadmarquillaforma,
+    (select reata(reata)) as reata,cantidadreata,
+    (select etiquetas(etiqueta)) as etiqueta,
+    (select etiquetas1(etiquetacodbarras)) as etiquetacodbarras,
+    consumoentretela from fichatecnica where codigo = ${codigo} order by id asc `)
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
+
+
+
+
+
+
+
 
 let getDatosOrdenes = (req, res) => {
     db.raw('select id, f_clientes(idclientes) as idclientes, fecha_orden from ordenes order by id desc')
@@ -158,7 +198,98 @@ let getDatosUsuarios =(req,res)=>{
 
 //get datos diseño
 let getDatosDiseno =(req,res)=>{
-    db.raw('select id,referencia,coleccion,clientes,descripcion,aprobacion,departamentoaprovador,elaboracion,departamentodis, fechaelab from fichadiseno')
+    db.raw('select id,referencia,coleccion, f_clientes(clientes) as clientes,descripcion,aprobacion,departamentoaprovador,elaboracion,departamentodis, fechaelab from fichadiseno')
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
+
+
+let getDatosbotones =(req,res)=>{
+    db.raw((`select  botones.id ,botones.nombre as nombre, botones.dimensiones as dimensiones,botones.tipo as tipo ,formabotones.descripcion as idforma,colorbotones.color as idcolorboton,
+    materialbotones.material as material,proveedores.nombre as proveedor
+    from botones 
+    join formabotones
+    on botones.idforma=formabotones.id
+    join colorbotones
+    on botones.idcolorboton=colorbotones.id
+    join materialbotones
+	on botones.idmaterialboton=materialbotones.id 
+    join proveedores
+    on botones.idproveedor=proveedores.id
+    `))
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
+
+
+let getDatosetiquetas =(req,res)=>{
+    db.raw(`select  id,nombre,comentario from etiquetas`)
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
+
+let getDatoshilos =(req,res)=>{
+    db.raw(`select hilos.id, hilos.nombre,hilos.material as materialhilos,hilos.tipo,
+	colorhilos.nombre as colorhilos,proveedores.nombre as proveedor
+	from hilos
+	join colorhilos
+	on hilos.idcolorhilo=colorhilos.id
+	join proveedores
+	on hilos.idproveedor=proveedores.id
+	`)
+    .then( resultado => {
+        return res.status(200).json({
+            ok: true,
+            datos: resultado.rows
+        }) 
+    })
+    .catch((error) => {
+        return res.status(500).json({
+            ok: false,
+            datos: null,
+            mensaje: `Error del servidor: ${error}` 
+        })
+    })
+}
+
+let getDatosreatas =(req,res)=>{
+    db.raw(`select id,nombre,caracteristica from reatas`)
     .then( resultado => {
         return res.status(200).json({
             ok: true,
@@ -248,4 +379,9 @@ module.exports = {
     getPDFordenes,
     getDatosDiseno,
     getDatosUsuarios,
+    getDatosfichatecnica,
+    getDatosbotones,
+    getDatosetiquetas,
+    getDatoshilos,
+    getDatosreatas
 }

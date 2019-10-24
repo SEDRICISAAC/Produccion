@@ -1,0 +1,397 @@
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION public.combinacion1(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.combinacion1(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.combinacion2(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.combinacion2(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.hilo(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from hilos
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.hilo(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------

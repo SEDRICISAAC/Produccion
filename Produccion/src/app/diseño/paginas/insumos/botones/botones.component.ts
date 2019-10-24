@@ -17,17 +17,20 @@ export class BotonesComponent implements OnInit  {
   ngOnInit() {
   
 
-    this.getDataProductos()
+    // this.getDataProductos()
     this.getData()
     this.table_header = [
       {
         id: 'N°',
-        nombretela : 'Nombre',
-        textura: 'Textura',
-        colortela: 'Color tela',
-        diseno: 'Diseño Tela',
-        material: 'Material Tela',
-        proveedor: 'Proveedor'
+        nombre : 'Nombre',
+        dimensiones: 'Dimensiones',
+        tipo: 'Tipo de Boton',
+        idforma: 'Forma Boton',
+        idcolorboton: 'Color Boton',
+        material: 'Material',
+        proveedor: 'Proveedor',
+
+
       }
     ]
   }
@@ -35,13 +38,13 @@ export class BotonesComponent implements OnInit  {
   
   respuestaProductos:any[]
 
-  getDataProductos=()=>{
-    let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
-    .subscribe(data => {
-      this.respuestaProductos = data.datos
-  })
-  }
+  // getDataProductos=()=>{
+  //   let tabla = 'botones'
+  //   this.http.get<any>(environment.API_URL + `?tabla=${tabla}`)
+  //   .subscribe(data => {
+  //     this.respuestaProductos = data.datos
+  // })
+  // }
  
 
 
@@ -50,8 +53,8 @@ export class BotonesComponent implements OnInit  {
     return id
   }
   getData = () => {
-    let tabla = 'telas'
-    this.http.get<any>(environment.API_URL + `telasAPI?tabla=${this.getLocalStorage()}`)
+    let tabla = 'botones'
+    this.http.get<any>(environment.API_URL + `botonesAPI?tabla=${this.getLocalStorage()}`)
         .subscribe(data => {
             this.respuesta = data.datos
         })

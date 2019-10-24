@@ -18,6 +18,15 @@ api.get('/routeF_ordenes', control.getDatosOrdenes)
 api.get('/routebyid', control.getDatosbyID)
 api.get('/routepdf', control.getPDFordenes)
 api.get('/routeF_fichadiseno',control.getDatosDiseno)
+api.get('/routeF_fichatecnica', control.getDatosfichatecnica)
+api.get('/routebotonesAPI',control.getDatosbotones)
+api.get('/routeetiquetasAPI',control.getDatosetiquetas)
+api.get('/routehilosAPI',control.getDatoshilos)
+api.get('/routereatasAPI',control.getDatosreatas)
+
+
+
+
 
 
 

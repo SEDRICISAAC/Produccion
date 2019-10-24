@@ -87,7 +87,7 @@ ALTER FUNCTION public.hilo(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.boton18(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -99,17 +99,17 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from botones
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.boton18(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.boton14(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -121,17 +121,17 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from botones
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.boton14(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.marquilla1(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -143,17 +143,17 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from marquillasMarca
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.marquilla1(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.marquilla8(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -165,17 +165,17 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from marquillasforma
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.marquilla8(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.instruccioncui(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -187,17 +187,17 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from instruccionescuidado
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.instruccioncui(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.reata(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -209,17 +209,17 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from reatas
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.reata(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.etiquetas(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -231,17 +231,17 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from etiquetas
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.etiquetas(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
+CREATE OR REPLACE FUNCTION public.etiquetas1(
 	id_param integer)
     RETURNS character varying
     LANGUAGE 'plpgsql'
@@ -253,145 +253,13 @@ DECLARE
 	v_nombre varchar;
 BEGIN
 	select nombre into v_nombre
-	from telas
+	from etiquetasCodigoBarra
 	where id = id_param;
 	return v_nombre;
 END
 $BODY$;
 
-ALTER FUNCTION public.tela_principal(integer)
-    OWNER TO postgres;
-
----------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
-	id_param integer)
-    RETURNS character varying
-    LANGUAGE 'plpgsql'
-
-    COST 100
-    VOLATILE 
-AS $BODY$
-DECLARE
-	v_nombre varchar;
-BEGIN
-	select nombre into v_nombre
-	from telas
-	where id = id_param;
-	return v_nombre;
-END
-$BODY$;
-
-ALTER FUNCTION public.tela_principal(integer)
-    OWNER TO postgres;
-
----------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
-	id_param integer)
-    RETURNS character varying
-    LANGUAGE 'plpgsql'
-
-    COST 100
-    VOLATILE 
-AS $BODY$
-DECLARE
-	v_nombre varchar;
-BEGIN
-	select nombre into v_nombre
-	from telas
-	where id = id_param;
-	return v_nombre;
-END
-$BODY$;
-
-ALTER FUNCTION public.tela_principal(integer)
-    OWNER TO postgres;
-
----------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
-	id_param integer)
-    RETURNS character varying
-    LANGUAGE 'plpgsql'
-
-    COST 100
-    VOLATILE 
-AS $BODY$
-DECLARE
-	v_nombre varchar;
-BEGIN
-	select nombre into v_nombre
-	from telas
-	where id = id_param;
-	return v_nombre;
-END
-$BODY$;
-
-ALTER FUNCTION public.tela_principal(integer)
-    OWNER TO postgres;
-
----------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
-	id_param integer)
-    RETURNS character varying
-    LANGUAGE 'plpgsql'
-
-    COST 100
-    VOLATILE 
-AS $BODY$
-DECLARE
-	v_nombre varchar;
-BEGIN
-	select nombre into v_nombre
-	from telas
-	where id = id_param;
-	return v_nombre;
-END
-$BODY$;
-
-ALTER FUNCTION public.tela_principal(integer)
-    OWNER TO postgres;
-
----------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
-	id_param integer)
-    RETURNS character varying
-    LANGUAGE 'plpgsql'
-
-    COST 100
-    VOLATILE 
-AS $BODY$
-DECLARE
-	v_nombre varchar;
-BEGIN
-	select nombre into v_nombre
-	from telas
-	where id = id_param;
-	return v_nombre;
-END
-$BODY$;
-
-ALTER FUNCTION public.tela_principal(integer)
-    OWNER TO postgres;
-
----------------------------------------------------------------------------------------------------------------------------------------
-CREATE OR REPLACE FUNCTION public.tela_principal(
-	id_param integer)
-    RETURNS character varying
-    LANGUAGE 'plpgsql'
-
-    COST 100
-    VOLATILE 
-AS $BODY$
-DECLARE
-	v_nombre varchar;
-BEGIN
-	select nombre into v_nombre
-	from telas
-	where id = id_param;
-	return v_nombre;
-END
-$BODY$;
-
-ALTER FUNCTION public.tela_principal(integer)
+ALTER FUNCTION public.etiquetas1(integer)
     OWNER TO postgres;
 
 ---------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,476 @@
+select * from fichadiseno
+
+CREATE TABLE fichaDiseno(
+id serial NOT NULL UNIQUE,
+referencia varchar (30)NOT NULL unique,
+coleccion char(30) NULL,
+clientes integer NULL,
+descripcion varchar(80),
+aprobacion varchar (80),
+departamentoAprovador  varchar(80),
+elaboracion varchar(80),
+departamentoDis varchar(80),
+fechaElab date NULL,
+CONSTRAINT Pk_ficha PRIMARY KEY (id),
+CONSTRAINT Fk_clientes FOREIGN KEY(clientes) REFERENCES clientes (id))
+
+select * from ordenes
+
+
+select * from usuarios
+CREATE TABLE usuarios(
+id serial NOT NULL UNIQUE,
+nombre varchar (30) NULL,
+apellido varchar(30) NULL,
+correo varchar(60) NULL,
+contraseña varchar(80),
+fechaNacimiento date,
+rol integer,
+CONSTRAINT Pk_usuarios PRIMARY KEY (id))
+
+insert into usuarios(nombre,apellido,correo,contraseña,fechanacimiento,rol) values ('William','Cardona','wcardona@indutexco.com','wcar1717','1999/10/10',1)
+insert into usuarios(nombre,apellido,correo,contraseña,fechanacimiento,rol) values ('Martha','Vacacela','mvacacela@indutexco.com','diseno2019','1999/10/10',2)
+
+
+
+select * from fichatecnica
+
+
+
+create table fichaTecnica(
+id serial  NOT NULL UNIQUE,
+codigo integer null,
+telaprincipal integer,
+cantidadTelaPrincipal numeric,
+combinacion1 integer,
+cantidadCombinacion1 numeric,
+combinacion2 integer,
+cantidadCombinacion2 numeric,
+hilo integer,
+consumoHilo numeric,
+boton18 integer,
+cantidadBoton18 numeric,
+boton14 integer,
+cantidadBoton14 numeric,
+marquillaMarca integer,
+cantidadMarquillaMarca numeric,
+cantidadMarquillaTS  numeric,
+cantidadMarquillaTM	numeric,
+cantidadMarquillaTL	numeric,
+cantidadMarquillaTXL numeric,
+cantidadMarquillaTXXL numeric,	
+cantidadMarquillaTXXXL numeric,	
+instruccionCuidado integer,
+marquillaForma integer,
+cantidadMarquillaForma	numeric,
+reata integer,
+cantidadReata numeric,	
+etiqueta integer,
+etiquetaCodBarras integer,
+consumoEntretela numeric,
+CONSTRAINT Pk_idficha PRIMARY KEY (id),
+CONSTRAINT Fk_codigodis FOREIGN KEY(codigo) REFERENCES fichadiseno (id),
+CONSTRAINT Fk_telaprinci FOREIGN KEY(telaprincipal) REFERENCES telas (id),
+CONSTRAINT Fk_combinacion1 FOREIGN KEY(combinacion1) REFERENCES telas (id),
+CONSTRAINT Fk_combinacion2 FOREIGN KEY(combinacion2) REFERENCES telas (id),
+CONSTRAINT Fk_hilo FOREIGN KEY(hilo) REFERENCES hilos (id),
+CONSTRAINT Fk_boton18 FOREIGN KEY(boton18) REFERENCES botones (id),
+CONSTRAINT Fk_boton14 FOREIGN KEY(boton14) REFERENCES botones (id),
+CONSTRAINT Fk_marquillaMarca FOREIGN KEY(marquillaMarca) REFERENCES marquillasMarca (id),
+CONSTRAINT Fk_instruccion FOREIGN KEY(instruccionCuidado) REFERENCES instruccionescuidado(id),
+CONSTRAINT Fk_marquillaForma FOREIGN KEY(marquillaForma) REFERENCES marquillasForma (id),
+CONSTRAINT Fk_reata FOREIGN KEY(reata) REFERENCES reatas (id),
+CONSTRAINT Fk_etiqueta FOREIGN KEY(etiqueta) REFERENCES etiquetas (id),
+CONSTRAINT Fk_etiquetaCodBarras FOREIGN KEY(etiquetaCodBarras) REFERENCES etiquetasCodigoBarra (id))
+
+
+
+
+-- select id,codigo,telaprincipal,cantidadtelaprincipal,combinacion1,cantidadcombinacion1,combinacion2,cantidadcombinacion2,hilo,consumohilo,boton18,cantidadboton18,boton14,cantidadboton14,marquillamarca,cantidadmarquillamarca,marquillats,
+-- cantidadmarquillats,marquillatm,cantidadmarquillatm,marquillatl,cantidadmarquillatl,marquillatxl,cantidadmarquillatxl,marquillatxxl,cantidadmarquillatxxl,marquillatxxxl,cantidadmarquillatxxxl,instruccioncuidado,
+-- marquillaforma,cantidadmarquillaforma,reata,cantidadreata,etiqueta,etiquetacodbarras,consumoentretela from fichatecnica where id=id order by  id desc
+
+
+
+select * from marquillasmarca
+insert into marquillasmarca (id,nombre,caracteristica)values(1,'Button up','marquilla');
+insert into marquillasmarca (id,nombre,caracteristica)values(2,'Button down','marquilla')
+
+
+select * from marquillas
+insert into marquillas(id,nombre,caracteristica)values(1,'T/S','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(2,'T/M','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(3,'T/L','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(4,'T/XL','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(5,'T/XXL','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(6,'T/XXXL','marquilla');
+
+
+
+create table marquillas(
+id integer not null,
+nombre varchar(30),
+caracteristica varchar(30),
+CONSTRAINT Pk_marquillas PRIMARY KEY (id))
+
+
+
+
+select * from marquillasforma
+insert into marquillasforma(id,nombre,caracteristica)values(1,'slimfit','marquilla');
+insert into marquillasforma(id,nombre,caracteristica)values(2,'regularfit','marquilla');
+insert into marquillasforma(id,nombre,caracteristica)values(3,'tailoredfit','marquilla');
+
+
+
+
+	select * from etiquetascodigobarra
+insert into etiquetascodigobarra(id,nombre,caracteristica)values(1,'deboond','marquilla');
+
+
+select * from reatas
+insert into reatas (id,nombre,caracteristica)values(1,'cardan','reata');
+insert into marquillasforma(id,nombre,caracteristica)values(3,'tailoredfit','marquilla');
+
+select * from instruccionescuidado
+insert into instruccionescuidado (id,nombre,caracteristica) values (1,'etiqueta de Instruccion','descripcion de la etiqueta')
+
+-- insert into fichatecnica(id,codigo,telaprincipal,cantidadtelaprincipal,combinacion1,cantidadcombinacion1,combinacion2,cantidadcombinacion2,hilo,consumohilo,boton18,cantidadboton18,boton14,cantidadboton14,marquillamarca,cantidadmarquillamarca,marquillats,
+-- cantidadmarquillats,marquillatm,cantidadmarquillatm,marquillatl,cantidadmarquillatl,marquillatxl,cantidadmarquillatxl,marquillatxxl,cantidadmarquillatxxl,marquillatxxxl,cantidadmarquillatxxxl,instruccioncuidado,
+-- marquillaforma,cantidadmarquillaforma,reata,cantidadreata,etiqueta,etiquetacodbarras,consumoentretela)
+-- values (1,1,20,21,21,21,21,21,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+
+select * from ordenes_detalle
+
+
+CREATE OR REPLACE FUNCTION public.tela_principal(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.tela_principal(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION public.combinacion1(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.combinacion1(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.combinacion2(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from telas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.combinacion2(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.hilo(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from hilos
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.hilo(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.boton18(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from botones
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.boton18(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.boton14(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from botones
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.boton14(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.marquilla1(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from marquillasMarca
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.marquilla1(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.marquilla8(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from marquillasforma
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.marquilla8(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.instruccioncui(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from instruccionescuidado
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.instruccioncui(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.reata(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from reatas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.reata(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.etiquetas(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from etiquetas
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.etiquetas(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION public.etiquetas1(
+	id_param integer)
+    RETURNS character varying
+    LANGUAGE 'plpgsql'
+
+    COST 100
+    VOLATILE 
+AS $BODY$
+DECLARE
+	v_nombre varchar;
+BEGIN
+	select nombre into v_nombre
+	from etiquetasCodigoBarra
+	where id = id_param;
+	return v_nombre;
+END
+$BODY$;
+
+ALTER FUNCTION public.etiquetas1(integer)
+    OWNER TO postgres;
+
+---------------------------------------------------------------------------------------------------------------------------------------
+select * from telas
+
+
+
+
+select id, (select f_telas(idtela)) as idtela, (select f_hilos(idhilo)) as idhilo, (select f_etiqueta(idetiqueta)) as idetiqueta, f_botones(idboton) as idboton, idordenes, (select f_tipoprenda(idtipoprenda)) as idtipoprenda, (select f_tallaprendas(idtallaprendas)) as idtallaprendas, tela_cantidad, boton_cantidad, hilo_cantidad, etiqueta_cantidad from ordenes_detalle
+
+
+select id,codigo,
+    (select tela_principal(telaprincipal)) as telaprincipal, cantidadtelaprincipal ,
+    (select combinacion1(combinacion1)) as combinacion1, cantidadcombinacion1 ,
+    (select combinacion2(combinacion2)) as combinacion2 , cantidadcombinacion2,
+     (select hilo(hilo)) as hilo, consumohilo,
+   (select boton18(boton18)) as boton18, cantidadboton18,
+     (select boton14(boton14)) as boton14, cantidadboton14,
+     (select marquilla1(marquillamarca)) as marquillamarca,cantidadmarquillamarca,
+     cantidadmarquillats,cantidadmarquillatm ,cantidadmarquillatl ,cantidadmarquillatxl,cantidadmarquillatxxl,cantidadmarquillatxxxl,
+     (select instruccioncui(instruccioncuidado)) as  instruccioncuidado,
+     (select marquilla8(marquillaforma)) as marquillaforma,cantidadmarquillaforma,
+    (select reata(reata)) as reata,cantidadreata,
+     (select etiquetas(etiqueta)) as etiqueta,
+     (select etiquetas1(etiquetacodbarras)) as etiquetacodbarras,
+    consumoentretela from fichatecnica
+	
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 	
+	select * from botones
+	select * from formabotones
+	select * from colorbotones
+	select * from materialbotones
+	
+	select  botones.id ,botones.nombre as nombre, botones.dimensiones as botones,botones.tipo as tipo ,formabotones.descripcion as idforma,colorbotones.color as idcolorboton,
+    materialbotones.material as idmaterialboton,proveedores.nombre as idproveedor
+    from botones 
+    join formabotones
+    on botones.idforma=formabotones.id
+    join colorbotones
+    on botones.idcolorboton=colorbotones.id
+    join materialbotones
+	on botones.idmaterialboton=materialbotones.id 
+    join proveedores
+    on botones.idproveedor=proveedores.id
+
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+	select * from etiquetas
+	
+	select  id,nombre,comentario from etiquetas
+	
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+	select * from hilos
+	select * from colorhilos
+	
+	select hilos.id, hilos.nombre,hilos.material as materialhilos,hilos.tipo,
+	colorhilos.nombre as colorhilos,proveedores.nombre as proveedor
+	from hilos
+	join colorhilos
+	on hilos.idcolorhilo=colorhilos.id
+	join proveedores
+	on hilos.idproveedor=proveedores.id
+	
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+
+	select * from reatas
+	select id,nombre,caracteristica from reatas

@@ -1,0 +1,152 @@
+select * from fichadiseno
+
+CREATE TABLE fichaDiseno(
+id serial NOT NULL UNIQUE,
+referencia varchar (30)NOT NULL unique,
+coleccion char(30) NULL,
+clientes integer NULL,
+descripcion varchar(80),
+aprobacion varchar (80),
+departamentoAprovador  varchar(80),
+elaboracion varchar(80),
+departamentoDis varchar(80),
+fechaElab date NULL,
+CONSTRAINT Pk_ficha PRIMARY KEY (id),
+CONSTRAINT Fk_clientes FOREIGN KEY(clientes) REFERENCES clientes (id))
+
+select * from ordenes
+
+
+select * from usuarios
+CREATE TABLE usuarios(
+id serial NOT NULL UNIQUE,
+nombre varchar (30) NULL,
+apellido varchar(30) NULL,
+correo varchar(60) NULL,
+contraseña varchar(80),
+fechaNacimiento date,
+rol integer,
+CONSTRAINT Pk_usuarios PRIMARY KEY (id))
+
+insert into usuarios(nombre,apellido,correo,contraseña,fechanacimiento,rol) values ('William','Cardona','wcardona@indutexco.com','wcar1717','1999/10/10',1)
+insert into usuarios(nombre,apellido,correo,contraseña,fechanacimiento,rol) values ('Martha','Vacacela','mvacacela@indutexco.com','diseno2019','1999/10/10',2)
+
+
+
+select * from fichatecnica
+
+
+
+create table fichaTecnica(
+id serial  NOT NULL UNIQUE,
+codigo integer null,
+telaprincipal integer,
+cantidadTelaPrincipal numeric,
+combinacion1 integer,
+cantidadCombinacion1 numeric,
+combinacion2 integer,
+cantidadCombinacion2 numeric,
+hilo integer,
+consumoHilo numeric,
+boton18 integer,
+cantidadBoton18 numeric,
+boton14 integer,
+cantidadBoton14 numeric,
+marquillaMarca integer,
+cantidadMarquillaMarca numeric,
+marquillaTS integer,
+cantidadMarquillaTS  numeric,	
+marquillaTM integer,
+cantidadMarquillaTM	numeric,
+marquillaTL integer,
+cantidadMarquillaTL	numeric,
+marquillaTXL integer,
+cantidadMarquillaTXL numeric,
+marquillaTXXL integer,
+cantidadMarquillaTXXL numeric,	
+marquillaTXXXL integer,
+cantidadMarquillaTXXXL numeric,	
+instruccionCuidado integer,
+marquillaForma integer,
+cantidadMarquillaForma	numeric,
+reata integer,
+cantidadReata numeric,	
+etiqueta integer,
+etiquetaCodBarras integer,
+consumoEntretela numeric,
+CONSTRAINT Pk_idficha PRIMARY KEY (id),
+CONSTRAINT Fk_codigodis FOREIGN KEY(codigo) REFERENCES fichadiseno (id),
+CONSTRAINT Fk_telaprinci FOREIGN KEY(telaprincipal) REFERENCES telas (id),
+CONSTRAINT Fk_combinacion1 FOREIGN KEY(combinacion1) REFERENCES telas (id),
+CONSTRAINT Fk_combinacion2 FOREIGN KEY(combinacion2) REFERENCES telas (id),
+CONSTRAINT Fk_hilo FOREIGN KEY(hilo) REFERENCES hilos (id),
+CONSTRAINT Fk_boton18 FOREIGN KEY(boton18) REFERENCES botones (id),
+CONSTRAINT Fk_boton14 FOREIGN KEY(boton14) REFERENCES botones (id),
+CONSTRAINT Fk_marquillaMarca FOREIGN KEY(marquillaMarca) REFERENCES marquillasMarca (id),
+CONSTRAINT Fk_marquillaTS FOREIGN KEY(marquillaTS) REFERENCES marquillas (id),
+CONSTRAINT Fk_marquillaTM FOREIGN KEY(marquillaTM) REFERENCES marquillas (id),
+CONSTRAINT Fk_marquillaTL FOREIGN KEY(marquillaTL) REFERENCES marquillas (id),
+CONSTRAINT Fk_marquillaTXL FOREIGN KEY(marquillaTXL) REFERENCES marquillas(id),
+CONSTRAINT Fk_marquillaTXXL FOREIGN KEY(marquillaTXXL) REFERENCES marquillas (id),
+CONSTRAINT Fk_marquillaTXXXL FOREIGN KEY(marquillaTXXXL) REFERENCES marquillas (id),
+CONSTRAINT Fk_marquillaForma FOREIGN KEY(marquillaForma) REFERENCES marquillasForma (id),
+CONSTRAINT Fk_reata FOREIGN KEY(reata) REFERENCES reatas (id),
+CONSTRAINT Fk_etiqueta FOREIGN KEY(etiqueta) REFERENCES etiquetas (id),
+CONSTRAINT Fk_etiquetaCodBarras FOREIGN KEY(etiquetaCodBarras) REFERENCES etiquetasCodigoBarra (id))
+
+
+
+
+select id,codigo,telaprincipal,cantidadtelaprincipal,combinacion1,cantidadcombinacion1,combinacion2,cantidadcombinacion2,hilo,consumohilo,boton18,cantidadboton18,boton14,cantidadboton14,marquillamarca,cantidadmarquillamarca,marquillats,
+cantidadmarquillats,marquillatm,cantidadmarquillatm,marquillatl,cantidadmarquillatl,marquillatxl,cantidadmarquillatxl,marquillatxxl,cantidadmarquillatxxl,marquillatxxxl,cantidadmarquillatxxxl,instruccioncuidado,
+marquillaforma,cantidadmarquillaforma,reata,cantidadreata,etiqueta,etiquetacodbarras,consumoentretela from fichatecnica where id=id order by  id desc
+
+
+
+select * from marquillasmarca
+insert into marquillasmarca (id,nombre,caracteristica)values(1,'Button up','marquilla');
+insert into marquillasmarca (id,nombre,caracteristica)values(2,'Button down','marquilla')
+
+
+select * from marquillas
+insert into marquillas(id,nombre,caracteristica)values(1,'T/S','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(2,'T/M','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(3,'T/L','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(4,'T/XL','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(5,'T/XXL','marquilla');
+insert into marquillas(id,nombre,caracteristica)values(6,'T/XXXL','marquilla');
+
+
+
+create table marquillas(
+id integer not null,
+nombre varchar(30),
+caracteristica varchar(30),
+CONSTRAINT Pk_marquillas PRIMARY KEY (id))
+
+
+
+
+select * from marquillasforma
+insert into marquillasforma(id,nombre,caracteristica)values(1,'slimfit','marquilla');
+insert into marquillasforma(id,nombre,caracteristica)values(2,'regularfit','marquilla');
+insert into marquillasforma(id,nombre,caracteristica)values(3,'tailoredfit','marquilla');
+
+
+
+
+	select * from etiquetascodigobarra
+insert into etiquetascodigobarra(id,nombre,caracteristica)values(1,'deboond','marquilla');
+
+
+select * from reatas
+insert into reatas (id,nombre,caracteristica)values(1,'cardan','reata');
+insert into marquillasforma(id,nombre,caracteristica)values(3,'tailoredfit','marquilla');
+
+select * from instruccionescuidado
+insert into instruccionescuidado (id,nombre,caracteristica) values (1,'etiqueta de Instruccion','descripcion de la etiqueta')
+
+insert into fichatecnica(id,codigo,telaprincipal,cantidadtelaprincipal,combinacion1,cantidadcombinacion1,combinacion2,cantidadcombinacion2,hilo,consumohilo,boton18,cantidadboton18,boton14,cantidadboton14,marquillamarca,cantidadmarquillamarca,marquillats,
+cantidadmarquillats,marquillatm,cantidadmarquillatm,marquillatl,cantidadmarquillatl,marquillatxl,cantidadmarquillatxl,marquillatxxl,cantidadmarquillatxxl,marquillatxxxl,cantidadmarquillatxxxl,instruccioncuidado,
+marquillaforma,cantidadmarquillaforma,reata,cantidadreata,etiqueta,etiquetacodbarras,consumoentretela)
+values (1,1,20,21,21,21,21,21,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
